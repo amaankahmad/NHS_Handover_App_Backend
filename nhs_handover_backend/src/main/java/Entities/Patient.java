@@ -1,14 +1,14 @@
-public class Patient extends Person{
+package Entities;
+
+public class Patient extends Person {
     private String patientLocation;
     private String numMRN;
-    private String numNHS;
 
 
-    public Patient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn, String numNHSIn){
-        super(nameIn,DOBIn,sexIn, new String[]{numMRNIn, numNHSIn});
+    public Patient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
+        super(nameIn,DOBIn,sexIn, numMRNIn);
         patientLocation= patientLocationIn;
         numMRN=numMRNIn;
-        numNHS = numNHSIn;
     }
 
     public String getPatientLocation(){

@@ -1,4 +1,6 @@
-public abstract class Doctor extends HospitalPersonnel{
+package Entities;
+
+public abstract class Doctor extends HospitalPersonnel {
 
     public Doctor(String nameIn, String DOBIn, String sexIn,String HospitalIDIn, String EmailIn, String numPagerIn){
         super(nameIn, DOBIn, sexIn, HospitalIDIn, EmailIn, numPagerIn);

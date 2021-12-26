@@ -1,11 +1,12 @@
-public abstract class Person {
+package Entities;
+
+public class Person {
     protected String name;
     private String DOB;
     private String sex;
-    protected String[] ID;
+    protected String ID;
 
-
-    public Person(String nameIn, String DOBIn, String sexIn, String[] IDIn){
+    public Person(String nameIn, String DOBIn, String sexIn, String IDIn) {
         name= nameIn;
         DOB = DOBIn;
         sex=sexIn;
@@ -13,7 +14,7 @@ public abstract class Person {
     }
 
 
-    public  String[] getID(){
+    public String getID(){
         return ID;
     }
 

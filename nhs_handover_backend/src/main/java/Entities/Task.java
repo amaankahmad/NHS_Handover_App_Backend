@@ -1,3 +1,7 @@
+package Entities;
+
+import Entities.Patient;
+
 public class Task {
     private Patient patientObject;
     private String seniorityRequired;

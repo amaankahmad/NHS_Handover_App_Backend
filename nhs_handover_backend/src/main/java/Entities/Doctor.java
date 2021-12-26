@@ -8,6 +8,12 @@ public abstract class Doctor extends HospitalPersonnel {
 
     public abstract Task[] getTasks(String role);
 
+    public String getName(){
+        return nameIn;
+    }
+
+    public String getEmail() {return EmailIn;}
+
     public void updateTask(Task oldTask, Task newTask){
 
     }

@@ -7,6 +7,7 @@ public class JuniorDoctor extends Doctor {
 
     public void takeUpTask(String task){
         //assigns task to themselves
+        return;
     }
 
     public Task[] getTasks(String role){

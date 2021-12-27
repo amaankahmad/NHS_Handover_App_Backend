@@ -4,12 +4,14 @@ public class HospitalPersonnel extends Person {
     private String hospitalID;
     private String email;
     private String numPager;
+    private PatientDatabase db;
 
-    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn){
+    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn, PatientDatabase dbIn){
         super(nameIn,DOBIn,sexIn,hospitalIDIn);
         hospitalID=hospitalIDIn;
         email=emailIn;
         numPager=numPagerIn;
+        db = dbIn;
     }
 
     public String getNumPager(){
@@ -26,5 +28,6 @@ public class HospitalPersonnel extends Person {
 
     public void createTask(){
         //Adds task to task list by calling task model.
+        return ;
     }
 }

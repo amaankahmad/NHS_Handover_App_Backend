@@ -1,11 +1,12 @@
-import Entities.Doctor;
-import Entities.Task;
+import Entities.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestDoctor {
-    Doctor doc;
+    PatientDatabase hospitalDB = new PatientDatabase();
+
+    HospitalPersonnel doc;
     String name1 = "Peter James";
     String DOB1 = "20/08/1975";
     String sex1 = "Male";
@@ -25,12 +26,13 @@ public class TestDoctor {
     String seniorityRequired1= "FY";
     String additionalNotes1= "Take blood and get results of creatinine level";
     String history1="";
+    String taskDescript1 = "Check bloods";
     String time1="18:20";
 
     // Creates Entities.Doctor object in all tests
     @BeforeEach
     public void setUpDoctor(){
-        doc = new Doctor(name1,DOB1,sex1,HospitalID1,Email1,numPager1);
+        doc = new HospitalPersonnel(name1,DOB1,sex1,HospitalID1,Email1,numPager1, hospitalDB);
     }
     // getName() Test
     @Test
@@ -47,7 +49,7 @@ public class TestDoctor {
         pat = new Patient(name1, DOB1, sex1, location1, ID1);
     }
     public void setUpTask(){
-        task1 = new Task(pat,seniorityRequired1,additionalNotes1,history1,time1);
+        task1 = new Task(pat,seniorityRequired1,additionalNotes1, history1, taskDescript1,time1);
     }
 
     // getTime() Test

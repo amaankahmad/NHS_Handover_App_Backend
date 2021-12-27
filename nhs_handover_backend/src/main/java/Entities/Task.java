@@ -8,12 +8,14 @@ public class Task {
     private String additionalNotes;
     private String history;
     private String creationTime;
+    private String taskDescript;
 
-    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String creationTimeIn){
+    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         patientObject=patIn;
         seniorityRequired=seniorIn;
         additionalNotes=notesIn;
         history=historyIn;
+        taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
     }
 
@@ -21,4 +23,12 @@ public class Task {
         return creationTime;
     }
 
+    public String[] getTaskInfo() {
+        String[] res = {additionalNotes, history};
+        return res;
+    }
+
+    public Patient getPatient() {
+        return patientObject;
+    }
 }

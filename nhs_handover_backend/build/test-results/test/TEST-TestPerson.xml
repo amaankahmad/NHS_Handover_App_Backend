@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestPerson" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-12-26T17:45:50" hostname="MacBook-Pro-de-Amaan-2.local" time="0.017">
+<testsuite name="TestPerson" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-12-26T18:12:06" hostname="MacBook-Pro-de-Amaan-2.local" time="0.02">
   <properties/>
-  <testcase name="testGetID()" classname="TestPerson" time="0.013"/>
-  <testcase name="testGetName()" classname="TestPerson" time="0.001"/>
+  <testcase name="testGetID()" classname="TestPerson" time="0.016"/>
+  <testcase name="testGetName()" classname="TestPerson" time="0.0"/>
   <testcase name="testGetDOB()" classname="TestPerson" time="0.001"/>
-  <testcase name="testGetSex()" classname="TestPerson" time="0.0"/>
+  <testcase name="testGetSex()" classname="TestPerson" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

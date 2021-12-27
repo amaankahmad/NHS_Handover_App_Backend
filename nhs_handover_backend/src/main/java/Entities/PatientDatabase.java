@@ -1,8 +1,8 @@
-import Entities.*;
+package Entities;
 
 import java.util.ArrayList;
 
-public class Database {
+public class PatientDatabase {
     ArrayList<Person> personList = new ArrayList<Person>();
     ArrayList<HospitalPersonnel> hospitalPersonList = new ArrayList<HospitalPersonnel>();
     ArrayList<Patient> patientList = new ArrayList<Patient>();
@@ -16,11 +16,12 @@ public class Database {
         patientList.add(pat);
     }
 
-    public void createHospitalPerson(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn){
-        HospitalPersonnel doc = new HospitalPersonnel(nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn);
-        personList.add(doc);
-        hospitalPersonList.add(doc);
-    }
+// TODO: Fix problem with passing in db reference when creating a hospital person
+//    public void createHospitalPerson(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn){
+//        HospitalPersonnel doc = new HospitalPersonnel(nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn);
+//        personList.add(doc);
+//        hospitalPersonList.add(doc);
+//    }
 
     public void getPatientTask(Patient P){
 

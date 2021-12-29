@@ -39,7 +39,7 @@ public class TestTask {
         pat=new Patient(name2,DOB2,sex2,location2,numMRN2);
         t = new Task(pat3, senior3, notes3, history3, taskDescript3, time3);
          }
-    setDoctorOfTask
+
     // Set Doctor of Task Test
     @Test
     public void testSetDoctorOfTask(){
@@ -54,7 +54,7 @@ public class TestTask {
     // Get Task Time of Creation Test
     @Test
     public void testGetTime(){
-        Assertions.assertEquals("13:24",t.getTime());
+        Assertions.assertEquals(time3,t.getTime());
     }
 
     // Get Task Info Test

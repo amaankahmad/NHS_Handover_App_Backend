@@ -46,19 +46,19 @@ public class TestHospitalPersonnel {
     }
     // Get Hospital Personnel Email() Test
     @Test
-    public void testGetHospitalPersonnelEmail(){
+    public void testGetEmail(){
         Assertions.assertEquals("sa3019@ic.ac.uk",hospPersonnel.getEmail());
     }
 
     // Get Hospital Personnel Pager Number Test
     @Test
-    public void testGetHospitalPersonnelPagerNum(){
+    public void testGetNumPager(){
         Assertions.assertEquals("7502985",hospPersonnel.getNumPager());
     }
 
    //hospital personnel add patient test
     @Test
-    public void testHospitalPersonnelAddPatient(){
+    public void testAddPatient(){
         ArrayList<Patient> pList = new ArrayList<Patient>();
         pList.add(pat);
         hospPersonnel.addPatient(name2,DOB2,sex2,patientLocation2,numMRN2);
@@ -67,7 +67,7 @@ public class TestHospitalPersonnel {
 
     //hospital personnel create task test
     @Test
-    public void testHospitalPersonnelCreateTask() {
+    public void testCreateTask() {
 
         ArrayList<Task> tList = new ArrayList<Task>();
         tList.add(t);

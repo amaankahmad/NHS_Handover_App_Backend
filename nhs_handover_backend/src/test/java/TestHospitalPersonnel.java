@@ -47,13 +47,13 @@ public class TestHospitalPersonnel {
     // Get Hospital Personnel Email() Test
     @Test
     public void testGetEmail(){
-        Assertions.assertEquals("sa3019@ic.ac.uk",hospPersonnel.getEmail());
+        Assertions.assertEquals(email1,hospPersonnel.getEmail());
     }
 
     // Get Hospital Personnel Pager Number Test
     @Test
     public void testGetNumPager(){
-        Assertions.assertEquals("7502985",hospPersonnel.getNumPager());
+        Assertions.assertEquals(numPager1,hospPersonnel.getNumPager());
     }
 
    //hospital personnel add patient test

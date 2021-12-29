@@ -17,6 +17,11 @@ public class TestPatient {
     public void setUp(){
         pat = new Patient(name1, DOB1, sex1, location1, ID1);
     }
+    // getID() test
+    @Test
+    public void testGetNumMRN(){
+        Assertions.assertEquals(ID1, pat.getNumMRN());
+    }
     // getPatientLocation() Test
     @Test
     public void testGetPatientLocation(){

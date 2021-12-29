@@ -8,11 +8,10 @@ public class TestPerson {
     String name1 = "Amaan Ahmad";
     String DOB1 = "27/01/2001";
     String sex1 = "Male";
-    String ID1 = "123456";
    // Creates Entities.Person object in all tests
     @BeforeEach
     public void setUp(){
-        p = new Person(name1,DOB1,sex1,ID1);
+        p = new Person(name1,DOB1,sex1);
     }
     // getName() Test
     @Test
@@ -23,11 +22,6 @@ public class TestPerson {
     @Test
     public void testGetDOB(){
         Assertions.assertEquals(DOB1,p.getDOB());
-    }
-    // getID() test
-    @Test
-    public void testGetID(){
-        Assertions.assertEquals(ID1,p.getID());
     }
     // getSex test
     @Test

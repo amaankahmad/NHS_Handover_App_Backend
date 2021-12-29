@@ -31,4 +31,9 @@ public class Task {
     public Patient getPatient() {
         return patientObject;
     }
+
+    public Task createFollowUp() {
+        return null;
+    }
+
 }

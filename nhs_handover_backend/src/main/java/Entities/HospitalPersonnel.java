@@ -1,17 +1,14 @@
 package Entities;
 
 public class HospitalPersonnel extends Person {
-    private String hospitalID;
     private String email;
     private String numPager;
-    private PatientDatabase db;
+    private Database db;
 
-    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn, PatientDatabase dbIn){
-        super(nameIn,DOBIn,sexIn,hospitalIDIn);
-        hospitalID=hospitalIDIn;
-        email=emailIn;
-        numPager=numPagerIn;
-        db = dbIn;
+    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn) {
+        super(nameIn, DOBIn, sexIn);
+        email = emailIn;
+        numPager = numPagerIn;
     }
 
     public String getNumPager(){

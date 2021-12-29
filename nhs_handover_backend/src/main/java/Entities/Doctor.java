@@ -3,9 +3,9 @@ package Entities;
 public abstract class Doctor extends HospitalPersonnel {
     private String nameIn;
     private String emailIn;
-    private PatientDatabase dbIn;
-    public Doctor(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn, PatientDatabase dbIn){
-        super(nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn, dbIn);
+    private SingletonDatabase dbIn;
+    public Doctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
+        super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
     }
 
     public abstract Task[] getTasks(String role);

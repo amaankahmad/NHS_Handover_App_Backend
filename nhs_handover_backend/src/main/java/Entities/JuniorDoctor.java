@@ -1,8 +1,8 @@
 package Entities;
 
 public class JuniorDoctor extends Doctor {
-    public JuniorDoctor(String nameIn, String DOBIn, String sexIn,String HospitalIDIn, String EmailIn, String numPagerIn, PatientDatabase dbIn){
-        super(nameIn, DOBIn, sexIn, HospitalIDIn, EmailIn, numPagerIn, dbIn);
+    public JuniorDoctor(String nameIn, String DOBIn, String sexIn,String HospitalIDIn, String EmailIn, String numPagerIn){
+        super(nameIn, DOBIn, sexIn, EmailIn, numPagerIn);
     }
 
     public void takeUpTask(String task){

@@ -1,5 +1,6 @@
 package Entities;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SingletonDatabase {
@@ -24,16 +25,24 @@ public class SingletonDatabase {
         return single_instance;
     }
 
-    public void createPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn, String numNHSIn){
+    public void createPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
         Patient pat = new Patient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
         personList.add(pat);
         patientList.add(pat);
+    }
+
+    public ArrayList<Patient> getPatientList(){
+        return patientList;
     }
 
     public void createHospitalPerson(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
         HospitalPersonnel doc = new HospitalPersonnel(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
         personList.add(doc);
         hospitalPersonList.add(doc);
+    }
+
+    public ArrayList<HospitalPersonnel> getHospitalList(){
+        return hospitalPersonList;
     }
 
     public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){

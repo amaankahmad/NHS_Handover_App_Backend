@@ -24,7 +24,7 @@ public class SingletonDatabase {
         return single_instance;
     }
 
-    public void createPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn, String numNHSIn){
+    public void createPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
         Patient pat = new Patient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
         personList.add(pat);
         patientList.add(pat);
@@ -52,6 +52,10 @@ public class SingletonDatabase {
         }
 
         return tasksForP;
+    }
+
+    public ArrayList<Patient> getPatientList() {
+        return patientList;
     }
 
 }

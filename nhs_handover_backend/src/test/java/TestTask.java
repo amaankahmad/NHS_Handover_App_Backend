@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class TestTask {
 
-    PatientDatabase hospitalDB = new PatientDatabase();
+    SingletonDatabase hospitalDB = SingletonDatabase.getInstance();
 
     HospitalPersonnel doc;
     String name1 = "Peter James";
@@ -13,7 +13,7 @@ public class TestTask {
     String sex1 = "Male";
     String email1= "peter.james@gmail.com";
     String numPager1= "123456";
-    PatientDatabase db1 = hospitalDB;
+    SingletonDatabase db1 = hospitalDB;
 
 
     Patient pat;
@@ -35,7 +35,7 @@ public class TestTask {
 
     @BeforeEach
     public void setUp(){
-        doc = new HospitalPersonnel(name1,DOB1,sex1,email1,numPager1,db1);
+        doc = new HospitalPersonnel(name1,DOB1,sex1,email1,numPager1);
         pat=new Patient(name2,DOB2,sex2,location2,numMRN2);
         t = new Task(pat3, senior3, notes3, history3, taskDescript3, time3);
          }

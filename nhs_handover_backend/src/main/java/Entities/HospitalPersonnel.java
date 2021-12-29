@@ -20,7 +20,7 @@ public class HospitalPersonnel extends Person {
     }
 
     public void addPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
-        db.createPatient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn)
+        db.createPatient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
     }
 
     public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){

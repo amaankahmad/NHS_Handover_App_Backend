@@ -1,4 +1,7 @@
 import Entities.HospitalPersonnel;
+import Entities.Patient;
+import Entities.SingletonDatabase;
+import Entities.Task;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +10,7 @@ import java.util.ArrayList;
 
 public class TestHospitalPersonnel {
 
-    PatientDatabase hospitalDB;
+    SingletonDatabase hospitalDB;
 
     HospitalPersonnel hospPersonnel;
     String name1 = "Sacha Avey";
@@ -15,7 +18,7 @@ public class TestHospitalPersonnel {
     String sex1 = "Female";
     String email1 = "sa3019@ic.ac.uk";
     String numPager1 = "7502985";
-    PatientDatabase db1 = hospitalDB;
+    SingletonDatabase db1 = SingletonDatabase.getInstance();
 
     Patient pat;
     String name2 = "Amaan Ahmad";
@@ -25,44 +28,43 @@ public class TestHospitalPersonnel {
     String patientLocation2 = "Imperial College London";
 
     Task t;
-    Patient pat3= pat;
-    String senior3= "consultant";
+    Patient pat3 = pat;
+    String senior3 = "consultant";
     String notes3 = "do task before 11 pm";
     String history3 = "past tasks done : ECG";
     String taskDescript3 = "Complete clinical review ";
-    String time3="18:20";
-
-
+    String time3 = "18:20";
 
 
     // Creates Entities.HospitalPersonnel object in all tests (nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn)
     @BeforeEach
-    public void setUp(){
-        hospitalDB = new PatientDatabase();
-        hospPersonnel = new HospitalPersonnel(name1,DOB1,sex1,email1,numPager1,db1);
-        pat=new Patient(name2,DOB2,sex2,patientLocation2,numMRN2);
+    public void setUp() {
+        hospitalDB = SingletonDatabase.getInstance();
+        hospPersonnel = new HospitalPersonnel(name1, DOB1, sex1, email1, numPager1);
+        pat = new Patient(name2, DOB2, sex2, patientLocation2, numMRN2);
         t = new Task(pat3, senior3, notes3, history3, taskDescript3, time3);
 
     }
+
     // Get Hospital Personnel Email() Test
     @Test
-    public void testGetEmail(){
-        Assertions.assertEquals(email1,hospPersonnel.getEmail());
+    public void testGetEmail() {
+        Assertions.assertEquals(email1, hospPersonnel.getEmail());
     }
 
     // Get Hospital Personnel Pager Number Test
     @Test
-    public void testGetNumPager(){
-        Assertions.assertEquals(numPager1,hospPersonnel.getNumPager());
+    public void testGetNumPager() {
+        Assertions.assertEquals(numPager1, hospPersonnel.getNumPager());
     }
 
-   //hospital personnel add patient test
+    //hospital personnel add patient test
     @Test
-    public void testAddPatient(){
+    public void testAddPatient() {
         ArrayList<Patient> pList = new ArrayList<Patient>();
         pList.add(pat);
-        hospPersonnel.addPatient(name2,DOB2,sex2,patientLocation2,numMRN2);
-        Assertions.assertEquals(db.getPatientList().get(0).getNumMRN(), pList.get(0).getNumMRN());
+        hospPersonnel.addPatient(name2, DOB2, sex2, patientLocation2, numMRN2);
+        Assertions.assertEquals(db1.getPatientList().get(0).getNumMRN(), pList.get(0).getNumMRN());
     }
 
     //hospital personnel create task test
@@ -72,5 +74,6 @@ public class TestHospitalPersonnel {
         ArrayList<Task> tList = new ArrayList<Task>();
         tList.add(t);
         hospPersonnel.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
-        Assertions.assertEquals(db.getPatientTask(pat3).get(0), tList.get(0));
-    };
+        Assertions.assertEquals(db1.getPatientTask(pat3).get(0), tList.get(0));
+    }
+}

@@ -4,7 +4,7 @@ import Entities.Patient;
 
 public class Task {
     private Patient patientObject;
-    private Doctor doctorOfTask;
+    private HospitalPersonnel doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;
     private String history;
@@ -20,11 +20,11 @@ public class Task {
         creationTime=creationTimeIn;
     }
 
-    public void setDoctorOfTask(Doctor docIn){
+    public void setDoctorOfTask(HospitalPersonnel docIn){
         doctorOfTask= docIn;
     }
 
-    public Doctor getDoctorOfTask(){
+    public HospitalPersonnel getDoctorOfTask(){
         return doctorOfTask;
     }
 

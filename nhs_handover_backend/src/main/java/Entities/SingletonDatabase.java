@@ -62,5 +62,4 @@ public class SingletonDatabase {
 
         return tasksForP;
     }
-
 }

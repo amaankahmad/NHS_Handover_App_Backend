@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestHospitalPersonnel" tests="4" skipped="0" failures="2" errors="0" timestamp="2021-12-29T22:23:43" hostname="MacBook-Pro-de-Amaan-2.local" time="0.005">
+<testsuite name="TestHospitalPersonnel" tests="4" skipped="0" failures="2" errors="0" timestamp="2021-12-29T22:33:34" hostname="MacBook-Pro-de-Amaan-2.local" time="0.005">
   <properties/>
-  <testcase name="testGetEmail()" classname="TestHospitalPersonnel" time="0.0"/>
-  <testcase name="testGetNumPager()" classname="TestHospitalPersonnel" time="0.001"/>
-  <testcase name="testAddPatient()" classname="TestHospitalPersonnel" time="0.002">
+  <testcase name="testGetEmail()" classname="TestHospitalPersonnel" time="0.001"/>
+  <testcase name="testGetNumPager()" classname="TestHospitalPersonnel" time="0.0"/>
+  <testcase name="testAddPatient()" classname="TestHospitalPersonnel" time="0.001">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;Entities.SingletonDatabase.createPatient(String, String, String, String, String)&quot; because &quot;this.db&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;Entities.SingletonDatabase.createPatient(String, String, String, String, String)&quot; because &quot;this.db&quot; is null
 	at Entities.HospitalPersonnel.addPatient(HospitalPersonnel.java:23)
 	at TestHospitalPersonnel.testAddPatient(TestHospitalPersonnel.java:66)
@@ -99,7 +99,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:831)
 </failure>
   </testcase>
-  <testcase name="testCreateTask()" classname="TestHospitalPersonnel" time="0.0">
+  <testcase name="testCreateTask()" classname="TestHospitalPersonnel" time="0.001">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;Entities.SingletonDatabase.createTask(Entities.Patient, String, String, String, String, String)&quot; because &quot;this.db&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;Entities.SingletonDatabase.createTask(Entities.Patient, String, String, String, String, String)&quot; because &quot;this.db&quot; is null
 	at Entities.HospitalPersonnel.createTask(HospitalPersonnel.java:27)
 	at TestHospitalPersonnel.testCreateTask(TestHospitalPersonnel.java:76)

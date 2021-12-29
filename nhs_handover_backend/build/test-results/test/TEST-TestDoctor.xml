@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestDoctor" tests="3" skipped="0" failures="1" errors="0" timestamp="2021-12-29T22:23:43" hostname="MacBook-Pro-de-Amaan-2.local" time="0.026">
+<testsuite name="TestDoctor" tests="3" skipped="0" failures="1" errors="0" timestamp="2021-12-29T22:33:34" hostname="MacBook-Pro-de-Amaan-2.local" time="0.027">
   <properties/>
   <testcase name="testGetEmail()" classname="TestDoctor" time="0.022"/>
-  <testcase name="testGetName()" classname="TestDoctor" time="0.0"/>
-  <testcase name="testGetTime()" classname="TestDoctor" time="0.002">
+  <testcase name="testGetName()" classname="TestDoctor" time="0.001"/>
+  <testcase name="testGetTime()" classname="TestDoctor" time="0.003">
     <failure message="java.lang.NullPointerException: Cannot invoke &quot;Entities.Task.getTime()&quot; because &quot;this.task1&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;Entities.Task.getTime()&quot; because &quot;this.task1&quot; is null
 	at TestDoctor.testGetTime(TestDoctor.java:64)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

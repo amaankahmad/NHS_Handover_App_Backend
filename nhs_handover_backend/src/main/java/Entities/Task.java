@@ -42,4 +42,7 @@ public class Task {
     }
 
     public String getTaskDescript(){ return taskDescript;}
+
+    public String getSeniorityRequired(){ return seniorityRequired; }
 }
+

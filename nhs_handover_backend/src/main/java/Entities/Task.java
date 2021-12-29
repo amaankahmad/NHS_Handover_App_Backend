@@ -4,19 +4,28 @@ import Entities.Patient;
 
 public class Task {
     private Patient patientObject;
+    private Doctor doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;
     private String history;
     private String creationTime;
-    private String taskDescription;
+    private String taskDescript;
 
     public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         patientObject=patIn;
         seniorityRequired=seniorIn;
         additionalNotes=notesIn;
         history=historyIn;
-        taskDescription = taskDescriptIn;
+        taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
+    }
+
+    public void setDoctorOfTask(Doctor docIn){
+        doctorOfTask= docIn;
+    }
+
+    public Doctor getDoctorOfTask(){
+        return doctorOfTask;
     }
 
     public String getTime(){
@@ -31,4 +40,6 @@ public class Task {
     public Patient getPatient() {
         return patientObject;
     }
+
+    public String getTaskDescript(){ return taskDescript;}
 }

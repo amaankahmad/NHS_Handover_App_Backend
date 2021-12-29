@@ -6,6 +6,7 @@ public class Task {
     private Patient patientObject;
     private String seniorityRequired;
     private String additionalNotes;
+    private Doctor doctorOfTask;
     private String history;
     private String creationTime;
     private String taskDescript;
@@ -17,6 +18,14 @@ public class Task {
         history=historyIn;
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
+    }
+
+    public void setDoctorOfTask(Doctor docIn){
+        doctorOfTask= docIn;
+    }
+
+    public Doctor getDoctorOfTask(){
+        return doctorOfTask;
     }
 
     public String getTime(){

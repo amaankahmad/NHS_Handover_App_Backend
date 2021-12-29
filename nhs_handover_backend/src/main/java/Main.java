@@ -1,9 +1,9 @@
-import Entities.Database;
+import Entities.SingletonDatabase;
 import Entities.HospitalPersonnel;
 
 public class Main {
     public static void main(String[] args) {
-        Database hospitalDB = new Database();
+        SingletonDatabase hospitalDB = SingletonDatabase.getInstance();
 
         String name1 = "Peter James";
         String DOB1 = "20/08/1975";
@@ -13,6 +13,6 @@ public class Main {
         String numPager1= "123456";
 
         // Double check that when passing this in a method its passing in the pointer rather creating a new object
-        HospitalPersonnel doc = new HospitalPersonnel(name1, DOB1, sex1, hospitalID1, email1, numPager1);
+        HospitalPersonnel doc = new HospitalPersonnel(name1, DOB1, sex1, email1, numPager1);
     }
 }

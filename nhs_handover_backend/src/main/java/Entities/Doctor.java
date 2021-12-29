@@ -3,7 +3,7 @@ package Entities;
 public abstract class Doctor extends HospitalPersonnel {
     private String nameIn;
     private String emailIn;
-    private Database dbIn;
+    private SingletonDatabase dbIn;
     public Doctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
         super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
     }

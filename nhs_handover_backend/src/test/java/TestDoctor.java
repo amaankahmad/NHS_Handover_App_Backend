@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestDoctor {
-    Database hospitalDB = new Database();
+    SingletonDatabase hospitalDB = SingletonDatabase.getInstance();
 
     HospitalPersonnel doc;
     String name1 = "Peter James";

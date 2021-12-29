@@ -3,8 +3,9 @@ package Entities;
 public abstract class Doctor extends HospitalPersonnel {
     private String nameIn;
     private String emailIn;
-    public Doctor(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn){
-        super(nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn);
+    private PatientDatabase dbIn;
+    public Doctor(String nameIn, String DOBIn, String sexIn,String hospitalIDIn, String emailIn, String numPagerIn, PatientDatabase dbIn){
+        super(nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn, dbIn);
     }
 
     public abstract Task[] getTasks(String role);
@@ -13,7 +14,7 @@ public abstract class Doctor extends HospitalPersonnel {
         return nameIn;
     }
 
-    public String getEmail() {return emailIn;}
+    public String getEmail() {return emailIn;} //already in hospital personel
 
     public void updateTask(Task oldTask, Task newTask){
         return;

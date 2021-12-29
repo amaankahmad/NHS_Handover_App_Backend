@@ -8,14 +8,14 @@ public class Task {
     private String additionalNotes;
     private String history;
     private String creationTime;
-    private String taskDescript;
+    private String taskDescription;
 
     public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         patientObject=patIn;
         seniorityRequired=seniorIn;
         additionalNotes=notesIn;
         history=historyIn;
-        taskDescript = taskDescriptIn;
+        taskDescription = taskDescriptIn;
         creationTime=creationTimeIn;
     }
 

@@ -1,20 +1,25 @@
 import Entities.HospitalPersonnel;
+import Entities.PatientDatabase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestHospitalPersonnel {
+
+    PatientDatabase hospitalDB = new PatientDatabase();
+
+    HospitalPersonnel hospPersonnel;
     String nameIn = "Sacha Avey";
     String DOBIn = "07/03/2001";
     String sexIn = "Female";
-    String hospitalIDIn = "01735295";
     String emailIn = "sa3019@ic.ac.uk";
     String numPagerIn = "7502985";
+    PatientDatabase dbIn = hospitalDB;
 
-    // Creates Entities.Patient object in all tests
+    // Creates Entities.HospitalPersonnel object in all tests (nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn)
     @BeforeEach
     public void setUp(){
-        hospPersonnel = new HospitalPersonnel(nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn);
+        hospPersonnel = new HospitalPersonnel(nameIn,DOBIn,sexIn,emailIn,numPagerIn,dbIn);
     }
     // Get Hospital Personnel Email() Test
     @Test
@@ -27,3 +32,12 @@ public class TestHospitalPersonnel {
         Assertions.assertEquals("7502985",hospPersonnel.getNumPager());
     }
 }
+//      need to do tests for following methods:
+//    public void addPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
+//        Patient newPatient = new Patient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
+//    }
+//
+//    public void createTask(){
+//        //Adds task to task list by calling task model.
+//        return ;
+//    }

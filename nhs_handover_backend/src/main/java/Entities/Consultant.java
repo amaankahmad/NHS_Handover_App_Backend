@@ -1,8 +1,8 @@
 package Entities;
 
 public class Consultant extends Doctor {
-    public Consultant(String nameIn, String DOBIn, String sexIn,String HospitalIDIn, String EmailIn, String numPagerIn){
-        super(nameIn, DOBIn, sexIn, HospitalIDIn, EmailIn, numPagerIn);
+    public Consultant(String nameIn, String DOBIn, String sexIn,String HospitalIDIn, String EmailIn, String numPagerIn, PatientDatabase dbIn){
+        super(nameIn, DOBIn, sexIn, HospitalIDIn, EmailIn, numPagerIn, dbIn);
     }
 
     public Task[] getTasks(String role){

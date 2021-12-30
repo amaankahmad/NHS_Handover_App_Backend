@@ -65,7 +65,7 @@ public class TestConsultant {
         db.createJrDoctor(name2, DOB2, sex2, email2, numPager2);
         d2 = db.getJrDoctorList().get(1);
 
-        db.createPatient(name3,DOB3,sex3,location3,numMRN3);
+        db.createPatient(name3, DOB3, sex3, location3, numMRN3);
         pat = db.getPatientList().get(0);
         db.createTask(pat3, senior4, notes4, history4, taskDescript4, time4);
         t1 = db.getCurrTaskList().get(0);
@@ -76,6 +76,7 @@ public class TestConsultant {
         tasks.add(t1);
         tasks.add(t2);
     }
+
     // getTasks() Test
     @Test
     public void testGetTasks() {
@@ -111,40 +112,28 @@ public class TestConsultant {
 
     // getDoctorTasks() Test
     @Test
-    public void testGetDoctorTasks(){
+    public void testGetDoctorTasks() {
         t1.setDoctorOfTask(d1);
         t2.setDoctorOfTask(d2);
 
         ArrayList<ArrayList<Task>> docTasks = c.getDoctorTasks();
+        ArrayList<Task> doc1Tasks = c.getDoctorTasks(d1);
 
-        System.out.println(docTasks.get(0).get(0).getDoctorOfTask().getName());
+        Assertions.assertEquals(docTasks.size(), 2);
         Assertions.assertEquals(docTasks.get(0).get(0), t1);
         Assertions.assertEquals(docTasks.get(1).get(0), t2);
+
+        Assertions.assertEquals(doc1Tasks.size(), 1);
+        Assertions.assertEquals(doc1Tasks.get(0), t1);
 
         t2.setDoctorOfTask(d1);
 
         docTasks = c.getDoctorTasks();
+        doc1Tasks = c.getDoctorTasks(d1);
 
-//        Assertions.assertEquals(docTasks.get(0).get(1), t2);
-    }
-
-    // getDoctorTasks(Doctor doc) Test
-    @Test
-    public void testGetDoctorTasks(Doctor d1){
-        t1.setDoctorOfTask(d1);
-        t2.setDoctorOfTask(d1);
-
-        ArrayList<Task> docTasks = c.getDoctorTasks(d1);
-
-        Assertions.assertEquals(docTasks.size(), 1);
-//        Assertions.assertEquals(docTasks.get(0), t1);
-
-        t2.setDoctorOfTask(d1);
-
-//        docTasks = c.getDoctorTasks(d1);
-//
-//        Assertions.assertEquals(docTasks.size(), 2);
-//        Assertions.assertEquals(docTasks.get(0), t1);
-//        Assertions.assertEquals(docTasks.get(1), t2);
+        Assertions.assertEquals(docTasks.get(0).size(), 2);
+        Assertions.assertEquals(doc1Tasks.size(), 2);
+        Assertions.assertEquals(doc1Tasks.get(0), t1);
+        Assertions.assertEquals(doc1Tasks.get(1), t2);
     }
 }

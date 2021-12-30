@@ -43,10 +43,19 @@ public class SingletonDatabase {
         jrDoctorList.add(doc);
     }
 
+    public ArrayList<JuniorDoctor> getJrDoctorList() {
+        return jrDoctorList;
+    }
+
+
     public void createConsultant(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn) {
         Consultant doc = new Consultant(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
         personList.add(doc);
         hospitalPersonList.add(doc);
+    }
+
+    public ArrayList<HospitalPersonnel> getHospitalPersonList(){
+        return hospitalPersonList;
     }
 
     public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
@@ -64,15 +73,7 @@ public class SingletonDatabase {
         Patient p = completed.getPatient();
         String[] pastInfo = completed.getTaskInfo();
         notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
-        Task followUp = new Task(p, seniorIn, notesIn, pastInfo[1], taskDescriptIn, creationTimeIn);
-    }
-
-    public ArrayList<HospitalPersonnel> getHospitalPersonList(){
-        return hospitalPersonList;
-    }
-
-    public ArrayList<JuniorDoctor> getJrDoctorList() {
-        return jrDoctorList;
+        createTask(p, seniorIn, notesIn, pastInfo[1], taskDescriptIn, creationTimeIn);
     }
 
     public ArrayList<Task> getCurrTaskList(){

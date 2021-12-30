@@ -41,12 +41,9 @@ public class Task {
         return patientObject;
     }
 
-    public Task createFollowUp() {
-        return null;
-    }
-
-
     public String getTaskDescript(){ return taskDescript;}
+
+    public String getNotes(){ return additionalNotes;}
 
     public String getSeniorityRequired(){ return seniorityRequired; }
 }

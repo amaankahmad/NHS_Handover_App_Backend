@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSingletonDatabase" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-12-30T20:55:45" hostname="MacBook-Pro-de-Amaan-2.local" time="0.018">
+  <properties/>
+  <testcase name="testGetPatientTask()" classname="TestSingletonDatabase" time="0.0"/>
+  <testcase name="testGetDoctorTasks()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreatePatient()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreateJrDoctor()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreateFollowUp()" classname="TestSingletonDatabase" time="0.007"/>
+  <testcase name="testGetCurrTaskList()" classname="TestSingletonDatabase" time="0.0"/>
+  <testcase name="testArchiveTask()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreateConsultant()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreateTask()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testGetDoneTaskList()" classname="TestSingletonDatabase" time="0.0"/>
+  <testcase name="testGetInstance()" classname="TestSingletonDatabase" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

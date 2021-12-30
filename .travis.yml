@@ -1,0 +1,18 @@
+language: java
+before_install:
+  - chmod +x nhs_handover_backend/gradlew
+script:
+  - ./nhs_handover_backend/gradlew build --info
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+directories:
+  - $HOME/nhs_handover_backend/.gradle/caches/
+  - $HOME/nhs_handover_backend/.gradle/wrapper/
+  -
+deploy:
+provider: heroku
+api_key: 4cf47c69-983c-476a-b952-734761af0640
+app: nhs-handover-app-backend
+skip_cleanup: true

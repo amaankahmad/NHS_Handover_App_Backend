@@ -1,22 +1,40 @@
 package Entities;
 
+import java.util.ArrayList;
+
 public class Consultant extends Doctor {
-    public Consultant(String nameIn, String DOBIn, String sexIn,String HospitalIDIn, String EmailIn, String numPagerIn){
-        super(nameIn, DOBIn, sexIn, EmailIn, numPagerIn);
+    SingletonDatabase db = SingletonDatabase.getInstance();
+
+    public Consultant(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
+        super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
     }
 
-    public Task[] getTasks(String role){
-       // Returns all tasks completed and not completed
-        return null;
+    public ArrayList<Task> getTasks(){
+       // Returns all tasks not completed
+        return db.getCurrTaskList();
     }
 
-    public Task[] getDoctorTasks(){
+    public ArrayList<Task> getCompletedTasks(){
+        // Returns all tasks completed
+        return db.getDoneTaskList();
+    }
+
+    public ArrayList<Task> getAllTasks(){
+        // Returns all tasks completed and not completed
+        ArrayList<Task> todo = getTasks();
+        ArrayList<Task> done = getCompletedTasks();
+        todo.addAll(done);
+
+        return todo;
+    }
+
+    public ArrayList<ArrayList<Task>> getDoctorTasks(){
         //Returns all doctors current tasks
-        return null;
+        return db.getDoctorTasks();
     }
 
-    public Task[] getDoctorTasks(Doctor doc) {
+    public ArrayList<Task> getDoctorTasks(Doctor doc) {
         //– if argument then returns tasks for specific doctor
-        return null;
+        return db.getDoctorTasks(doc);
     }
 }

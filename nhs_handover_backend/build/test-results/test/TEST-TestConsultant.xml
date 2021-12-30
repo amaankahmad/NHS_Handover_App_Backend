@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestConsultant" tests="3" skipped="0" failures="1" errors="0" timestamp="2021-12-29T22:33:34" hostname="MacBook-Pro-de-Amaan-2.local" time="0.005">
+<testsuite name="TestConsultant" tests="2" skipped="0" failures="1" errors="0" timestamp="2021-12-30T15:47:17" hostname="MacBook-Pro-de-Amaan-2.local" time="0.017">
   <properties/>
-  <testcase name="testGetTasks()" classname="TestConsultant" time="0.001"/>
-  <testcase name="testGetDoctorTasks()" classname="TestConsultant" time="0.0"/>
-  <testcase name="testGetDoctorTasks(Doctor)" classname="TestConsultant" time="0.002">
+  <testcase name="testGetDoctorTasks()" classname="TestConsultant" time="0.013"/>
+  <testcase name="testGetDoctorTasks(Doctor)" classname="TestConsultant" time="0.003">
     <failure message="org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [Entities.Doctor arg0] in method [public void TestConsultant.testGetDoctorTasks(Entities.Doctor)]." type="org.junit.jupiter.api.extension.ParameterResolutionException">org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [Entities.Doctor arg0] in method [public void TestConsultant.testGetDoctorTasks(Entities.Doctor)].
 	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameter(ExecutableInvoker.java:200)
 	at org.junit.jupiter.engine.execution.ExecutableInvoker.resolveParameters(ExecutableInvoker.java:183)
@@ -83,6 +82,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:831)
 </failure>
   </testcase>
-  <system-out><![CDATA[]]></system-out>
+  <system-out><![CDATA[null
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

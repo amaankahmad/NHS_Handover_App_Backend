@@ -20,7 +20,7 @@ public class Task {
         creationTime=creationTimeIn;
     }
 
-    public void setDoctorOfTask(HospitalPersonnel docIn){
+    public void setDoctorOfTask(Doctor docIn){
         doctorOfTask= docIn;
     }
 

@@ -7,13 +7,12 @@ public class TestTask {
 
     SingletonDatabase hospitalDB = SingletonDatabase.getInstance();
 
-    HospitalPersonnel doc;
+    JuniorDoctor doc;
     String name1 = "Peter James";
     String DOB1 = "20/08/1975";
     String sex1 = "Male";
     String email1= "peter.james@gmail.com";
     String numPager1= "123456";
-    SingletonDatabase db1 = hospitalDB;
 
 
     Patient pat;
@@ -35,7 +34,7 @@ public class TestTask {
 
     @BeforeEach
     public void setUp(){
-        doc = new HospitalPersonnel(name1,DOB1,sex1,email1,numPager1);
+        doc = new JuniorDoctor(name1,DOB1,sex1,email1,numPager1);
         pat=new Patient(name2,DOB2,sex2,location2,numMRN2);
         t = new Task(pat3, senior3, notes3, history3, taskDescript3, time3);
          }

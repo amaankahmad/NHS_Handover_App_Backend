@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestTask" tests="6" skipped="0" failures="2" errors="0" timestamp="2021-12-29T22:33:34" hostname="MacBook-Pro-de-Amaan-2.local" time="0.012">
+<testsuite name="TestTask" tests="6" skipped="0" failures="2" errors="0" timestamp="2021-12-30T17:14:38" hostname="MacBook-Pro-de-Amaan-2.local" time="0.004">
   <properties/>
-  <testcase name="testGetPatient()" classname="TestTask" time="0.002">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@139a4c1&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@139a4c1&gt; but was: &lt;null&gt;
+  <testcase name="testGetPatient()" classname="TestTask" time="0.001">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@2b90ffdd&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@2b90ffdd&gt; but was: &lt;null&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at TestTask.testGetPatient(TestTask.java:70)
+	at TestTask.testGetPatient(TestTask.java:69)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -101,18 +101,18 @@
 	at java.base/java.lang.Thread.run(Thread.java:831)
 </failure>
   </testcase>
-  <testcase name="testGetTime()" classname="TestTask" time="0.002"/>
-  <testcase name="testSetDoctorOfTask()" classname="TestTask" time="0.001"/>
-  <testcase name="testGetSeniorityRequired()" classname="TestTask" time="0.001"/>
+  <testcase name="testGetTime()" classname="TestTask" time="0.0"/>
+  <testcase name="testSetDoctorOfTask()" classname="TestTask" time="0.0"/>
+  <testcase name="testGetSeniorityRequired()" classname="TestTask" time="0.0"/>
   <testcase name="testGetTaskDescript()" classname="TestTask" time="0.0"/>
   <testcase name="testGetTaskInfo()" classname="TestTask" time="0.001">
-    <failure message="org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@529aa65d&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@286c7ef5&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@529aa65d&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@286c7ef5&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;
+    <failure message="org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@f6614b4&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@422da64&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@f6614b4&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@422da64&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at TestTask.testGetTaskInfo(TestTask.java:64)
+	at TestTask.testGetTaskInfo(TestTask.java:63)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -74,6 +74,6 @@ public class TestHospitalPersonnel {
         ArrayList<Task> tList = new ArrayList<Task>();
         tList.add(t);
         hospPersonnel.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
-        Assertions.assertEquals(db1.getPatientTask(pat3).get(0), tList.get(0));
+        Assertions.assertEquals(db1.getPatientTasks(pat3).get(0), tList.get(0));
     }
 }

@@ -1,5 +1,7 @@
 package Entities;
 
+import java.util.ArrayList;
+
 public abstract class Doctor extends HospitalPersonnel {
     private String nameIn;
     private String emailIn;
@@ -8,7 +10,7 @@ public abstract class Doctor extends HospitalPersonnel {
         super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
     }
 
-    public abstract Task[] getTasks(String role);
+    public abstract ArrayList<Task> getTasks();
 
     public String getName(){
         return nameIn;

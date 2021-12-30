@@ -126,4 +126,26 @@ public class SingletonDatabase {
 
         return tasksForAll;
     }
+
+    public void reset() {
+        for (int i = personList.size()-1; i >= 0; i--) {
+            personList.remove(i);
+        }
+        for (int i = hospitalPersonList.size()-1; i >= 0; i--) {
+            hospitalPersonList.remove(i);
+        }
+        for (int i = jrDoctorList.size()-1; i >= 0; i--) {
+            jrDoctorList.remove(i);
+        }
+        for (int i = patientList.size()-1; i >= 0; i--) {
+            patientList.remove(i);
+        }
+        for (int i = currTaskList.size()-1; i >= 0; i--) {
+            currTaskList.remove(i);
+        }
+        for (int i = doneTaskList.size()-1; i >= 0; i--) {
+            doneTaskList.remove(i);
+        }
+
+    }
 }

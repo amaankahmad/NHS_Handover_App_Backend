@@ -65,6 +65,7 @@ public class TestSingletonDatabase {
     // createPatient test
     @Test
     public void testCreatePatient(){
+        db.reset();
         db.createPatient(name3,DOB3,sex3,location3,numMRN3);
         pat = db.getPatientList().get(0);
         Patient p = new Patient(name3, DOB3, sex3, location3, numMRN3);
@@ -75,6 +76,7 @@ public class TestSingletonDatabase {
     // createJrDoctor test
     @Test
     public void testCreateJrDoctor(){
+        db.reset();
         db.createJrDoctor(name1, DOB1, sex1, email1, numPager1);
         d1 = db.getJrDoctorList().get(0);
         JuniorDoctor jr = new JuniorDoctor(name1, DOB1, sex1, email1, numPager1);
@@ -85,6 +87,7 @@ public class TestSingletonDatabase {
     // createConsultant test
     @Test
     public void testCreateConsultant(){
+        db.reset();
         db.createConsultant(name, DOB, sex, email, numPager);
         c = (Consultant) db.getHospitalPersonList().get(0);
         Consultant con = new Consultant(name, DOB, sex, email, numPager);
@@ -95,16 +98,20 @@ public class TestSingletonDatabase {
     // createTask test
     @Test
     public void testCreateTask(){
+        db.reset();
+        Assertions.assertEquals(db.getCurrTaskList().size(), 0);
         db.createTask(pat3, senior4, notes4, history4, taskDescript4, time4);
+        Assertions.assertEquals(1, db.getCurrTaskList().size());
         Task t = db.getCurrTaskList().get(0);
         Task todo = new Task(pat3, senior4, notes4, history4, taskDescript4, time4);
 
-        Assertions.assertEquals(t.getPatient(), todo.getPatient());
+        Assertions.assertEquals(todo.getPatient(), t.getPatient());
     }
 
     // archiveTask test
     @Test
     public void testArchiveTask(){
+        db.reset();
         db.createTask(pat3, senior4, notes4, history4, taskDescript4, time4);
         Task t = db.getCurrTaskList().get(0);
         Task todo = new Task(pat3, senior4, notes4, history4, taskDescript4, time4);
@@ -119,6 +126,7 @@ public class TestSingletonDatabase {
     // createFollowUp test
     @Test
     public void testCreateFollowUp() {
+        db.reset();
         db.createTask(pat3, senior4, notes4, history4, taskDescript4, time4);
         Task t = db.getCurrTaskList().get(0);
         String notesIn = notes5 + "\nAdditional Notes from Previous Task: \n" + notes4;
@@ -134,6 +142,7 @@ public class TestSingletonDatabase {
 
 //    @BeforeEach
     public void setUp(){
+        db.reset();
         db.createConsultant(name, DOB, sex, email, numPager);
         c = (Consultant) db.getHospitalPersonList().get(0);
 

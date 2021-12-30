@@ -56,6 +56,7 @@ public class TestConsultant {
     // Creates Entities.Person object in all tests
     @BeforeEach
     public void setUp() {
+        db.reset();
         db.createConsultant(name, DOB, sex, email, numPager);
         c = (Consultant) db.getHospitalPersonList().get(0);
 

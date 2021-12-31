@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestPerson" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-30T21:04:47" hostname="Ibrahims-MBP" time="0.009">
+<testsuite name="TestPerson" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-31T15:11:55" hostname="Kims-MacBook-Pro.local" time="0.009">
   <properties/>
   <testcase name="testGetName()" classname="TestPerson" time="0.008"/>
   <testcase name="testGetDOB()" classname="TestPerson" time="0.001"/>

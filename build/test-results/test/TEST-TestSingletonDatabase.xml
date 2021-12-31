@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSingletonDatabase" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-12-31T17:42:02" hostname="Sachas-MacBook-Air.local" time="0.084">
+<testsuite name="TestSingletonDatabase" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-12-31T20:18:06" hostname="Sachas-MacBook-Air.local" time="0.034">
   <properties/>
-  <testcase name="testGetPatientTask()" classname="TestSingletonDatabase" time="0.002"/>
+  <testcase name="testGetPatientTask()" classname="TestSingletonDatabase" time="0.0"/>
   <testcase name="testGetDoctorTasks()" classname="TestSingletonDatabase" time="0.001"/>
   <testcase name="testCreatePatient()" classname="TestSingletonDatabase" time="0.0"/>
-  <testcase name="testCreateJrDoctor()" classname="TestSingletonDatabase" time="0.001"/>
-  <testcase name="testCreateFollowUp()" classname="TestSingletonDatabase" time="0.061"/>
-  <testcase name="testGetCurrTaskList()" classname="TestSingletonDatabase" time="0.001"/>
-  <testcase name="testArchiveTask()" classname="TestSingletonDatabase" time="0.002"/>
-  <testcase name="testCreateConsultant()" classname="TestSingletonDatabase" time="0.001"/>
-  <testcase name="testCreateTask()" classname="TestSingletonDatabase" time="0.001"/>
-  <testcase name="testGetDoneTaskList()" classname="TestSingletonDatabase" time="0.002"/>
-  <testcase name="testGetInstance()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreateJrDoctor()" classname="TestSingletonDatabase" time="0.0"/>
+  <testcase name="testCreateFollowUp()" classname="TestSingletonDatabase" time="0.025"/>
+  <testcase name="testGetCurrTaskList()" classname="TestSingletonDatabase" time="0.0"/>
+  <testcase name="testArchiveTask()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreateConsultant()" classname="TestSingletonDatabase" time="0.0"/>
+  <testcase name="testCreateTask()" classname="TestSingletonDatabase" time="0.0"/>
+  <testcase name="testGetDoneTaskList()" classname="TestSingletonDatabase" time="0.001"/>
+  <testcase name="testGetInstance()" classname="TestSingletonDatabase" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

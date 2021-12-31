@@ -3,8 +3,10 @@ package Entities;
 import Entities.Patient;
 
 public class Task {
+    SingletonDatabase db = SingletonDatabase.getInstance();
+
     private Patient patientObject;
-    private HospitalPersonnel doctorOfTask;
+    private JuniorDoctor doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;
     private String history;
@@ -20,12 +22,11 @@ public class Task {
         creationTime=creationTimeIn;
     }
 
-    public void setDoctorOfTask(Doctor docIn){
+    public void setDoctorOfTask(JuniorDoctor docIn){
         doctorOfTask= docIn;
     }
 
-    public HospitalPersonnel getDoctorOfTask(){
-        return doctorOfTask;
+    public JuniorDoctor getDoctorOfTask(){return doctorOfTask;
     }
 
     public String getTime(){

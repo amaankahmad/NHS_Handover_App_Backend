@@ -3,6 +3,8 @@ package Entities;
 import java.util.ArrayList;
 
 public abstract class Doctor extends HospitalPersonnel {
+    SingletonDatabase db = SingletonDatabase.getInstance();
+
     private String nameIn;
     private String emailIn;
     private SingletonDatabase dbIn;

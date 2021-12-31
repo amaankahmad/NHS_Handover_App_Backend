@@ -3,7 +3,6 @@ package Entities;
 import java.util.ArrayList;
 
 public class JuniorDoctor extends Doctor {
-
     SingletonDatabase db = SingletonDatabase.getInstance();
 
     public JuniorDoctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){

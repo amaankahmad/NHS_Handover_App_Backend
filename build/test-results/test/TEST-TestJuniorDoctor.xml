@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestJuniorDoctor" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-12-31T15:11:55" hostname="Kims-MacBook-Pro.local" time="0.0">
+<testsuite name="TestJuniorDoctor" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-12-31T18:38:38" hostname="Ibrahims-MacBook-Pro.local" time="0.0">
   <properties/>
   <testcase name="testGetTasks()" classname="TestJuniorDoctor" time="0.0"/>
   <testcase name="takeUpTask()" classname="TestJuniorDoctor" time="0.0"/>

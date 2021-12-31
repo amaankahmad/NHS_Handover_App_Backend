@@ -3,27 +3,19 @@ package Entities;
 import java.util.ArrayList;
 
 public abstract class Doctor extends HospitalPersonnel {
-    private String nameIn;
-    private String emailIn;
-    private SingletonDatabase dbIn;
+    SingletonDatabase db = SingletonDatabase.getInstance();
     public Doctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
         super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
     }
 
     public abstract ArrayList<Task> getTasks();
 
-    public String getName(){
-        return nameIn;
-    }
-
-    public String getEmail() {return emailIn;} //already in hospital personel
-
-    public void updateTask(Task oldTask, Task newTask){
-        return;
+    public void followUpTask(Task oldTask, Task newTask){
+        db.createFollowUp(oldTask,newTask.getSeniorityRequired(),newTask.getNotes(),newTask.getTaskDescript(),newTask.getTime());
     }
 
     public void archiveTask(Task taskDone){
-        return;
+         db.archiveTask(taskDone);
     }
 
 }

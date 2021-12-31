@@ -43,6 +43,8 @@ public class Task {
 
     public String getTaskDescript(){ return taskDescript;}
 
+    public String getHistory(){ return history;}
+
     public String getNotes(){ return additionalNotes;}
 
     public String getSeniorityRequired(){ return seniorityRequired; }

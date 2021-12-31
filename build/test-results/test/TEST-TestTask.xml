@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestTask" tests="6" skipped="0" failures="2" errors="0" timestamp="2021-12-31T15:11:55" hostname="Kims-MacBook-Pro.local" time="0.002">
+<testsuite name="TestTask" tests="6" skipped="0" failures="2" errors="0" timestamp="2021-12-31T18:38:37" hostname="Ibrahims-MacBook-Pro.local" time="0.003">
   <properties/>
   <testcase name="testGetPatient()" classname="TestTask" time="0.001">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@3533399a&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@3533399a&gt; but was: &lt;null&gt;
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@79dd7585&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;Entities.Patient@79dd7585&gt; but was: &lt;null&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -102,11 +102,11 @@
 </failure>
   </testcase>
   <testcase name="testGetTime()" classname="TestTask" time="0.0"/>
-  <testcase name="testSetDoctorOfTask()" classname="TestTask" time="0.0"/>
+  <testcase name="testSetDoctorOfTask()" classname="TestTask" time="0.001"/>
   <testcase name="testGetSeniorityRequired()" classname="TestTask" time="0.0"/>
   <testcase name="testGetTaskDescript()" classname="TestTask" time="0.0"/>
   <testcase name="testGetTaskInfo()" classname="TestTask" time="0.0">
-    <failure message="org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@7c8b6da2&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@40ecbf0b&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@7c8b6da2&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@40ecbf0b&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;
+    <failure message="org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@981c55e&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@79391c2f&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: [Ljava.lang.String;@981c55e&lt;[family history of diabetes, previous task done: blood test and ECG]&gt; but was: [Ljava.lang.String;@79391c2f&lt;[family history of diabetes, previous task done: blood test and ECG]&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)

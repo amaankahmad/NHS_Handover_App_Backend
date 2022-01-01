@@ -54,6 +54,11 @@ public class SingletonDatabase {
         hospitalPersonList.add(doc);
     }
 
+    public void createHospitalPersonnel(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
+        HospitalPersonnel hospPersonnel = new HospitalPersonnel(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
+        hospitalPersonList.add(hospPersonnel);
+    }
+
     public ArrayList<HospitalPersonnel> getHospitalPersonList(){
         return hospitalPersonList;
     }

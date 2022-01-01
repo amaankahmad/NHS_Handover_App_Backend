@@ -9,8 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 public class TestHospitalPersonnel {
-
-    SingletonDatabase hospitalDB;
+    SingletonDatabase db = SingletonDatabase.getInstance();
 
     HospitalPersonnel hospPersonnel;
     String name1 = "Sacha Avey";
@@ -39,11 +38,16 @@ public class TestHospitalPersonnel {
     // Creates Entities.HospitalPersonnel object in all tests (nameIn, DOBIn, sexIn, hospitalIDIn, emailIn, numPagerIn)
     @BeforeEach
     public void setUp() {
-        hospitalDB = SingletonDatabase.getInstance();
-        hospPersonnel = new HospitalPersonnel(name1, DOB1, sex1, email1, numPager1);
-        pat = new Patient(name2, DOB2, sex2, patientLocation2, numMRN2);
-        t = new Task(pat3, senior3, notes3, history3, taskDescript3, time3);
+        db.reset();
 
+        db.createHospitalPersonnel(name1, DOB1, sex1, email1, numPager1);
+        hospPersonnel=db.getHospitalPersonList().get(0);
+
+        db.createPatient(name2, DOB2, sex2, patientLocation2, numMRN2);
+        pat = db.getPatientList().get(0);
+
+        db.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
+        t = db.getCurrTaskList().get(0);
     }
 
     // Get Hospital Personnel Email() Test

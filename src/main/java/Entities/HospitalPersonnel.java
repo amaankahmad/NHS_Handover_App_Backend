@@ -1,9 +1,10 @@
 package Entities;
 
 public class HospitalPersonnel extends Person {
+    SingletonDatabase db = SingletonDatabase.getInstance();
+
     private String email;
     private String numPager;
-    private SingletonDatabase db;
 
     public HospitalPersonnel(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn) {
         super(nameIn, DOBIn, sexIn);

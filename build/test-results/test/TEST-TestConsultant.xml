@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestConsultant" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-12-31T18:38:38" hostname="Ibrahims-MacBook-Pro.local" time="0.002">
+<testsuite name="TestConsultant" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-01T16:55:58" hostname="MacBook-Pro-de-Amaan-2.local" time="0.003">
   <properties/>
-  <testcase name="testGetTasks()" classname="TestConsultant" time="0.0"/>
-  <testcase name="testGetAllTasks()" classname="TestConsultant" time="0.0"/>
-  <testcase name="testGetCompletedTasks()" classname="TestConsultant" time="0.0"/>
+  <testcase name="testGetTasks()" classname="TestConsultant" time="0.001"/>
+  <testcase name="testGetAllTasks()" classname="TestConsultant" time="0.001"/>
+  <testcase name="testGetCompletedTasks()" classname="TestConsultant" time="0.001"/>
   <testcase name="testGetDoctorTasks()" classname="TestConsultant" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

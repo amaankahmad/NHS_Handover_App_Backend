@@ -3,9 +3,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 public class TestTask {
 
-    SingletonDatabase hospitalDB = SingletonDatabase.getInstance();
+    SingletonDatabase db = SingletonDatabase.getInstance();
+    ArrayList<Task> tasks;
 
     JuniorDoctor doc;
     String name1 = "Peter James";
@@ -24,7 +27,7 @@ public class TestTask {
 
     Task t;
     Patient pat3 = pat;
-    HospitalPersonnel doctorOfTask1 = doc;
+    JuniorDoctor doctorOfTask1;
     String senior3 = "Consultant";
     String notes3 = "family history of diabetes";
     String history3 = "previous task done: blood test and ECG";
@@ -34,20 +37,33 @@ public class TestTask {
 
     @BeforeEach
     public void setUp(){
-        doc = new JuniorDoctor(name1,DOB1,sex1,email1,numPager1);
-        pat=new Patient(name2,DOB2,sex2,location2,numMRN2);
-        t = new Task(pat3, senior3, notes3, history3, taskDescript3, time3);
+        db.reset();
+
+        db.createJrDoctor(name1, DOB1, sex1, email1, numPager1);
+        doc=db.getJrDoctorList().get(0);
+        doctorOfTask1 = doc;
+
+        db.createPatient(name2, DOB2, sex2, location2, numMRN2);
+        pat = db.getPatientList().get(0);
+
+        db.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
+        t = db.getCurrTaskList().get(0);
+
+        tasks = new ArrayList<Task>();
+        tasks.add(t);
          }
 
     // Set Doctor of Task Test
     @Test
     public void testSetDoctorOfTask(){
         t.setDoctorOfTask(doc);
-        Assertions.assertEquals(doc,t.getDoctorOfTask());
+        Assertions.assertEquals(doctorOfTask1,t.getDoctorOfTask());
     }
+
+    @Test
     public void testGetDoctorOfTask(){
         t.setDoctorOfTask(doc);
-        Assertions.assertEquals(doc,t.getDoctorOfTask());
+        Assertions.assertEquals(doctorOfTask1,t.getDoctorOfTask());
     }
 
     // Get Task Time of Creation Test
@@ -60,13 +76,14 @@ public class TestTask {
     @Test
     public void testGetTaskInfo(){
         String[] res={notes3, history3};
-        Assertions.assertEquals(res,t.getTaskInfo());
+        Assertions.assertEquals(res[0],t.getTaskInfo()[0]);
+        Assertions.assertEquals(res[1],t.getTaskInfo()[1]);
     }
 
     // Get Task Patient Test
     @Test
     public void testGetPatient(){
-        Assertions.assertEquals(pat,t.getPatient());
+        Assertions.assertEquals(pat3,t.getPatient());
     }
 
     // Get Task Description Test

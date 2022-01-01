@@ -76,7 +76,7 @@ public class TestDoctor {
      //updateTask() Test
     @Test
     public void testFollowUpTask(){
-        jDoc.followUpTask(task1,task2);
+        jDoc.createFollowUpTask(task1,task2.getSeniorityRequired(), task2.getNotes(), task2.getTaskDescript(), task2.getTime());
 
 
         ArrayList<Task> dbTasks = db.getDoneTaskList();

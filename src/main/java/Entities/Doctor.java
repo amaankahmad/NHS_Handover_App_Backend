@@ -20,12 +20,12 @@ public abstract class Doctor extends HospitalPersonnel {
 
     public String getEmail() {return emailIn;} //already in hospital personel
 
-    public void updateTask(Task oldTask, Task newTask){
-        return;
+    public void createFollowUpTask(Task oldTask, String seniorIn, String notesIn, String taskDescriptIn, String creationTimeIn){
+        db.createFollowUp(oldTask, seniorIn, notesIn, taskDescriptIn, creationTimeIn);
     }
 
     public void archiveTask(Task taskDone){
-        return;
+        db.archiveTask(taskDone);
     }
 
 }

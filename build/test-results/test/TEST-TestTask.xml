@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestTask" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-01-01T16:55:58" hostname="MacBook-Pro-de-Amaan-2.local" time="0.004">
+<testsuite name="TestTask" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-01-05T02:05:01" hostname="Sachas-MacBook-Air.local" time="0.004">
   <properties/>
   <testcase name="testGetDoctorOfTask()" classname="TestTask" time="0.0"/>
-  <testcase name="testGetPatient()" classname="TestTask" time="0.001"/>
+  <testcase name="testGetPatient()" classname="TestTask" time="0.0"/>
   <testcase name="testGetTime()" classname="TestTask" time="0.0"/>
-  <testcase name="testSetDoctorOfTask()" classname="TestTask" time="0.001"/>
-  <testcase name="testGetSeniorityRequired()" classname="TestTask" time="0.0"/>
+  <testcase name="testSetDoctorOfTask()" classname="TestTask" time="0.0"/>
+  <testcase name="testGetSeniorityRequired()" classname="TestTask" time="0.001"/>
   <testcase name="testGetTaskDescript()" classname="TestTask" time="0.0"/>
-  <testcase name="testGetTaskInfo()" classname="TestTask" time="0.0"/>
+  <testcase name="testGetTaskInfo()" classname="TestTask" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

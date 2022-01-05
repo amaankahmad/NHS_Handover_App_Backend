@@ -2,6 +2,10 @@ package Entities;
 
 import Entities.Patient;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Task {
     SingletonDatabase db = SingletonDatabase.getInstance();
 
@@ -12,6 +16,7 @@ public class Task {
     private String history;
     private String creationTime;
     private String taskDescript;
+    //private String name;
 
     public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         patientObject=patIn;
@@ -20,6 +25,17 @@ public class Task {
         history=historyIn;
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
+       // name = patIn.getName();
+//        String numMRN = patIn.getName();
+
+//        try{
+//            Connection connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+//
+//            String sql = "insert into currenttasklist(patientname,mrnnumber,covidStat,urgency,tasktype, seniority, additionalnotes) values (patName,numMRN,covidStat,urgencyIn,taskDescriptIn,seniorIn, notesIn)";
+//
+//        } catch (SQLException e){
+//            e.printStackTrace();
+//        }
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){

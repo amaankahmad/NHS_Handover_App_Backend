@@ -1,4 +1,5 @@
 import Entities.Patient;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,11 @@ public class TestPatient {
         pat = new Patient(name1, DOB1, sex1, location1, ID1);
     }
     // getID() test
+
+//    @AfterEach
+//    public void finishTest(){
+//        DELETE FROM my_table WHERE my_col_id = (SELECT MAX(my_col_id) FROM my_table);
+//    }
     @Test
     public void testGetNumMRN(){
         Assertions.assertEquals(ID1, pat.getNumMRN());

@@ -2,11 +2,16 @@ import Entities.JuniorDoctor ;
 import Entities.Patient ;
 import Entities.SingletonDatabase;
 import Entities.Task;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class TestJuniorDoctor {
@@ -70,6 +75,36 @@ public class TestJuniorDoctor {
 
     }
 
+    @AfterEach
+    public void shutDown(){
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try{
+            Connection conn= DriverManager.getConnection(dbUrl);
+            Connection connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+            Statement s= conn.createStatement();
+            String sqlStr = "DELETE FROM patientlist WHERE ID=(SELECT MAX(id) FROM patientlist)";
+            s.execute(sqlStr);
+            sqlStr = "DELETE FROM hospitalpersonlist WHERE ID=(SELECT MAX(id) FROM hospitalpersonlist)";
+            s.execute(sqlStr);
+            sqlStr = "DELETE FROM jrdoctorlist WHERE ID=(SELECT MAX(id) FROM jrdoctorlist)";
+            s.execute(sqlStr);
+            sqlStr = "DELETE FROM personlist WHERE ID=(SELECT MAX(id) FROM personlist)";
+            s.execute(sqlStr);
+            System.out.println("it worked");
+
+        } catch (SQLException e){
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void takeUpTask(){

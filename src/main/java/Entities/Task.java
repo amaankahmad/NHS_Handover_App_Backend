@@ -13,10 +13,10 @@ public class Task {
     private JuniorDoctor doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;
+    private String urgency;
     private String history;
     private String creationTime;
     private String taskDescript;
-    //private String name;
 
     public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         patientObject=patIn;

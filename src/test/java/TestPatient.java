@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class TestPatient {
     Patient pat;
     String name1 = "Amaan Ahmad";
@@ -20,10 +25,31 @@ public class TestPatient {
     }
     // getID() test
 
-//    @AfterEach
-//    public void finishTest(){
-//        DELETE FROM my_table WHERE my_col_id = (SELECT MAX(my_col_id) FROM my_table);
+//     @AfterEach
+//    public void shutDown(){
+//        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+//        try {
+//            // Registers the driver
+//            Class.forName("org.postgresql.Driver");
+//            //connects
+//
+//        } catch (Exception e) {
+//        }
+//
+//        try{
+//            Connection conn= DriverManager.getConnection(dbUrl);
+//            Connection connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+//            Statement s= conn.createStatement();
+//            String sqlStr = "DELETE FROM patientlist WHERE ID=(SELECT MAX(id) FROM patientlist)";
+//            s.execute(sqlStr);
+//            System.out.println("it worked");
+//
+//        } catch (SQLException e){
+//            System.out.println("it didnt work");
+//            e.printStackTrace();
+//        }
 //    }
+
     @Test
     public void testGetNumMRN(){
         Assertions.assertEquals(ID1, pat.getNumMRN());

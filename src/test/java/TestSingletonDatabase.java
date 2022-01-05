@@ -1,8 +1,13 @@
 import Entities.*;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class TestSingletonDatabase {
@@ -69,8 +74,8 @@ public class TestSingletonDatabase {
         db.createPatient(name3,DOB3,sex3,location3,numMRN3);
         pat = db.getPatientList().get(0);
         Patient p = new Patient(name3, DOB3, sex3, location3, numMRN3);
-
         Assertions.assertEquals(pat.getNumMRN(), p.getNumMRN());
+        shutDownPatient();
     }
 
     // createJrDoctor test
@@ -82,6 +87,7 @@ public class TestSingletonDatabase {
         JuniorDoctor jr = new JuniorDoctor(name1, DOB1, sex1, email1, numPager1);
 
         Assertions.assertEquals(d1.getNumPager(), jr.getNumPager());
+        shutDownJrDoctor();
     }
 
     // createConsultant test
@@ -93,6 +99,7 @@ public class TestSingletonDatabase {
         Consultant con = new Consultant(name, DOB, sex, email, numPager);
 
         Assertions.assertEquals(c.getNumPager(), con.getNumPager());
+        shutDownConsultant();
     }
 
     // createTask test
@@ -162,11 +169,15 @@ public class TestSingletonDatabase {
         tasks = new ArrayList<Task>();
         tasks.add(t1);
         tasks.add(t2);
+
+        shutDownConsultant();
     }
+
+
 
     // getCurrTaskList() Test
     @Test
-    public void testGetCurrTaskList() {
+    public void testGetCurrTaskList(){
         setUp();
         ArrayList<Task> dbTasks = db.getCurrTaskList();
 
@@ -193,6 +204,7 @@ public class TestSingletonDatabase {
     public void testGetPatientTask(){
         setUp();
         Assertions.assertEquals(t1, db.getPatientTasks(pat).get(0));
+        shutDownPatient();
     }
 
     // getDoctorTasks(Doctor doc) test
@@ -221,5 +233,85 @@ public class TestSingletonDatabase {
         Assertions.assertEquals(doc1Tasks.size(), 2);
         Assertions.assertEquals(doc1Tasks.get(0), t1);
         Assertions.assertEquals(doc1Tasks.get(1), t2);
+
+        shutDownPatient();
+    }
+
+    public void shutDownPatient() {
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try {
+            Connection conn = DriverManager.getConnection(dbUrl);
+            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+            Statement s = conn.createStatement();
+            String sqlStr = "DELETE FROM patientlist WHERE ID=(SELECT MAX(id) FROM patientlist)";
+            s.execute(sqlStr);
+            System.out.println("it worked");
+
+        } catch (SQLException e) {
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
+    }
+
+    public void shutDownJrDoctor() {
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try {
+            Connection conn = DriverManager.getConnection(dbUrl);
+            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+            Statement s = conn.createStatement();
+            String sqlStr = "DELETE FROM hospitalpersonlist WHERE ID=(SELECT MAX(id) FROM hospitalpersonlist)";
+            s.execute(sqlStr);
+            sqlStr = "DELETE FROM jrdoctorlist WHERE ID=(SELECT MAX(id) FROM jrdoctorlist)";
+            s.execute(sqlStr);
+            sqlStr = "DELETE FROM personlist WHERE ID=(SELECT MAX(id) FROM personlist)";
+            s.execute(sqlStr);
+            System.out.println("it worked");
+
+        } catch (SQLException e) {
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
+    }
+
+    public void shutDownConsultant() {
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try {
+            Connection conn = DriverManager.getConnection(dbUrl);
+            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+            Statement s = conn.createStatement();
+            String sqlStr = "DELETE FROM hospitalpersonlist WHERE ID=(SELECT MAX(id) FROM hospitalpersonlist)";
+            s.execute(sqlStr);
+            sqlStr = "DELETE FROM personlist WHERE ID=(SELECT MAX(id) FROM personlist)";
+            s.execute(sqlStr);
+            System.out.println("it worked");
+
+        } catch (SQLException e) {
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
     }
 }

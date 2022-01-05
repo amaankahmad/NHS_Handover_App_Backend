@@ -1,6 +1,7 @@
 package Entities;
 
 import java.lang.reflect.Array;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class SingletonDatabase {
@@ -26,10 +27,44 @@ public class SingletonDatabase {
         return single_instance;
     }
 
+//    String nameIn="HELLOOO";
+//    String DOBIn="HELLOOOO";
+//    String patientLocationIn = "home";
+//    String numMRNIn = "12345";
+//    String sexIn = "idek";
     public void createPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
         Patient pat = new Patient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
         personList.add(pat);
         patientList.add(pat);
+
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try{
+            Connection conn= DriverManager.getConnection(dbUrl);
+
+
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO patientlist(name,DOB,patientLocation,nummrn) VALUES (?, ?, ?, ?)");
+
+            pstmt.setString(1, nameIn);
+            pstmt.setString(2, DOBIn);
+            pstmt.setString(3, patientLocationIn);
+            pstmt.setString(4, numMRNIn);
+            pstmt.executeUpdate();
+            //sqlStr = "TRUNCATE TABLE patientlist;";
+            //s.execute(sqlStr);
+            System.out.println("it worked");
+
+        } catch (SQLException e){
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<Patient> getPatientList(){
@@ -41,6 +76,47 @@ public class SingletonDatabase {
         personList.add(doc);
         hospitalPersonList.add(doc);
         jrDoctorList.add(doc);
+
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try{
+            Connection conn= DriverManager.getConnection(dbUrl);
+
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO personlist(name,DOB,sex) VALUES (?, ?, ?)");
+            pstmt.setString(1, nameIn);
+            pstmt.setString(2, DOBIn);
+            pstmt.setString(3, sexIn);
+            pstmt.executeUpdate();
+
+            pstmt = conn.prepareStatement("INSERT INTO hospitalpersonlist(name,DOB,sex, email, numpager) VALUES (?, ?, ?, ?, ?)");
+            pstmt.setString(1, nameIn);
+            pstmt.setString(2, DOBIn);
+            pstmt.setString(3, sexIn);
+            pstmt.setString(4, emailIn);
+            pstmt.setString(5, numPagerIn);
+            pstmt.executeUpdate();
+
+            pstmt = conn.prepareStatement("INSERT INTO jrdoctorlist(name,DOB,sex, email, numpager) VALUES (?, ?, ?, ?, ?)");
+            pstmt.setString(1, nameIn);
+            pstmt.setString(2, DOBIn);
+            pstmt.setString(3, sexIn);
+            pstmt.setString(4, emailIn);
+            pstmt.setString(5, numPagerIn);
+            pstmt.executeUpdate();
+
+
+
+        } catch (SQLException e){
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<JuniorDoctor> getJrDoctorList() {
@@ -52,11 +128,69 @@ public class SingletonDatabase {
         Consultant doc = new Consultant(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
         personList.add(doc);
         hospitalPersonList.add(doc);
+
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try{
+            Connection conn= DriverManager.getConnection(dbUrl);
+
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO hospitalpersonlist(name,DOB,sex, email, numpager) VALUES (?, ?, ?, ?, ?)");
+            pstmt.setString(1, nameIn);
+            pstmt.setString(2, DOBIn);
+            pstmt.setString(3, sexIn);
+            pstmt.setString(4, emailIn);
+            pstmt.setString(5, numPagerIn);
+            pstmt.executeUpdate();
+            //sqlStr = "TRUNCATE TABLE patientlist;";
+            //s.execute(sqlStr);
+            System.out.println("it worked");
+
+        } catch (SQLException e){
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
     }
 
     public void createHospitalPersonnel(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
         HospitalPersonnel hospPersonnel = new HospitalPersonnel(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
         hospitalPersonList.add(hospPersonnel);
+
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+
+        try{
+            Connection conn= DriverManager.getConnection(dbUrl);
+
+
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO hospitalpersonlist(name,DOB,sex, email, numpager) VALUES (?, ?, ?, ?, ?)");
+            pstmt.setString(1, nameIn);
+            pstmt.setString(2, DOBIn);
+            pstmt.setString(3, sexIn);
+            pstmt.setString(4, emailIn);
+            pstmt.setString(5, numPagerIn);
+            pstmt.executeUpdate();
+            //sqlStr = "TRUNCATE TABLE patientlist;";
+            //s.execute(sqlStr);
+            System.out.println("it worked");
+
+        } catch (SQLException e){
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
+
     }
 
     public ArrayList<HospitalPersonnel> getHospitalPersonList(){
@@ -66,6 +200,47 @@ public class SingletonDatabase {
     public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         Task t = new Task(patIn, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
         currTaskList.add(t);
+
+        String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            // Registers the driver
+            Class.forName("org.postgresql.Driver");
+            //connects
+
+        } catch (Exception e) {
+        }
+//
+        try{
+            Connection conn= DriverManager.getConnection(dbUrl);
+////            Connection connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+////            Statement s= conn.createStatement();
+////            String sqlStr = "insert into patientlist(name,DOB,patientLocation,nummrn) values('"nameIn"', '"DOBIn"', '"patientLocationIn"', '"numMRNIn"');";
+////            s.execute(sqlStr);
+
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO currTaskList(name,DOB,sex,patientLocation,nummrn,priority, tasktype, seniority, covidstatus, schedule,additionalnotes) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+//            pstmt.setString(1, patIn.super.getName());
+//            pstmt.setString(2, patIn.super.getDOB());
+//            pstmt.setString(3, patIn.super.getSex());
+//            pstmt.setString(4, patIn.getPatientLocation());
+//            pstmt.setString(5, patIn.getNumMRN());
+            pstmt.setString(6, "TBD");
+            pstmt.setString(7, taskDescriptIn);
+            pstmt.setString(8, seniorIn);
+            pstmt.setString(9, "TBD");
+            pstmt.setString(10, "TBD");
+            pstmt.setString(11, notesIn);
+
+            pstmt.executeUpdate();
+            //sqlStr = "TRUNCATE TABLE patientlist;";
+            //s.execute(sqlStr);
+            System.out.println("it worked");
+//
+        } catch (SQLException e){
+            System.out.println("it didnt work");
+            e.printStackTrace();
+        }
+
+
     }
 
     public void archiveTask(Task completed) {

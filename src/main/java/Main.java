@@ -14,7 +14,7 @@ public class Main {
         String email1= "peter.james@gmail.com";
         String numPager1= "123456";
 
-        Patient pat = new Patient("Sacha","7th match 2001", "female", "home", "12345");
+        //Patient pat = new Patient("Sacha","7th match 2001", "female", "home", "12345");
 
         // Double check that when passing this in a method its passing in the pointer rather creating a new object
         HospitalPersonnel doc = new HospitalPersonnel(name1, DOB1, sex1, email1, numPager1);

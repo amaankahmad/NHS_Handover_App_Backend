@@ -9,9 +9,9 @@ public class JuniorDoctor extends Doctor {
         super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
     }
 
-    public ArrayList<Task> takeUpTask(Doctor doc){
+    public void takeUpTask(Task t){
         //assigns task to themselves
-        return db.getDoctorTasks(doc);
+        t.setDoctorOfTask(this);
     }
 
     public ArrayList<Task> getTasks(){

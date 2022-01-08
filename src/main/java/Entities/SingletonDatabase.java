@@ -26,8 +26,8 @@ public class SingletonDatabase {
         return single_instance;
     }
 
-    public void createPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
-        Patient pat = new Patient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
+    public void createPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn, String statusCOVIDIn){
+        Patient pat = new Patient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn, statusCOVIDIn);
         personList.add(pat);
         patientList.add(pat);
     }
@@ -63,8 +63,8 @@ public class SingletonDatabase {
         return hospitalPersonList;
     }
 
-    public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
-        Task t = new Task(patIn, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
+    public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn, String urgencyIn){
+        Task t = new Task(patIn, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn, urgencyIn);
         currTaskList.add(t);
     }
 
@@ -73,12 +73,12 @@ public class SingletonDatabase {
         doneTaskList.add(completed);
     }
 
-    public void createFollowUp(Task completed, String seniorIn, String notesIn, String taskDescriptIn, String creationTimeIn) {
+    public void createFollowUp(Task completed, String seniorIn, String notesIn, String taskDescriptIn, String creationTimeIn, String urgencyIn) {
         archiveTask(completed);
         Patient p = completed.getPatient();
         String[] pastInfo = completed.getTaskInfo();
         notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
-        createTask(p, seniorIn, notesIn, pastInfo[1], taskDescriptIn, creationTimeIn);
+        createTask(p, seniorIn, notesIn, pastInfo[1], taskDescriptIn, creationTimeIn, urgencyIn);
     }
 
     public ArrayList<Task> getCurrTaskList(){
@@ -132,6 +132,7 @@ public class SingletonDatabase {
         return tasksForAll;
     }
 
+    // Helper method for tests
     public void reset() {
         for (int i = personList.size()-1; i >= 0; i--) {
             personList.remove(i);

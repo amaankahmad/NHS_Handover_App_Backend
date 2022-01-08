@@ -6,28 +6,29 @@ public class Task {
     SingletonDatabase db = SingletonDatabase.getInstance();
 
     private Patient patientObject;
-    private JuniorDoctor doctorOfTask;
+    private JuniorDoctor doctorOfTask = null;
     private String seniorityRequired;
     private String additionalNotes;
     private String history;
     private String creationTime;
     private String taskDescript;
+    private String urgency;
 
-    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
+    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn, String urgencyIn){
         patientObject=patIn;
         seniorityRequired=seniorIn;
         additionalNotes=notesIn;
         history=historyIn;
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
+        urgency = urgencyIn;
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){
         doctorOfTask= docIn;
     }
 
-    public JuniorDoctor getDoctorOfTask(){return doctorOfTask;
-    }
+    public JuniorDoctor getDoctorOfTask(){return doctorOfTask;}
 
     public String getTime(){
         return creationTime;
@@ -37,6 +38,9 @@ public class Task {
         String[] res = {additionalNotes, history};
         return res;
     }
+
+    public String getUrgency(){return urgency;}
+
 
     public Patient getPatient() {
         return patientObject;

@@ -20,6 +20,7 @@ public class TestDoctor {
     String sex1 = "Male";
     String location1 = "Imperial College London";
     String numMRN1 = "123456";
+    String statusCOVID1 = "Red";
 
 
     Task task1;
@@ -29,6 +30,8 @@ public class TestDoctor {
     String history2="";
     String taskDescript2 = "Check bloods";
     String time2="18:20";
+    String urgency2 = "Low";
+
 
 
     Task task2;
@@ -38,6 +41,8 @@ public class TestDoctor {
     String history3 = "previous task done: blood test";
     String taskDescript3 = "clinical review";
     String time3 = "13:42";
+    String urgency3 = "High";
+
 
     SingletonDatabase db = SingletonDatabase.getInstance();
     ArrayList<Task> tasks;
@@ -48,13 +53,13 @@ public class TestDoctor {
         db.createJrDoctor(name, DOB, sex, email, numPager);
         jDoc = db.getJrDoctorList().get(0);
 
-        db.createPatient(name1, DOB1, sex1, location1, numMRN1);
+        db.createPatient(name1, DOB1, sex1, location1, numMRN1, statusCOVID1);
         pat = db.getPatientList().get(0);
 
-        db.createTask(pat2, senior2, notes2, history2, taskDescript2, time2);
+        db.createTask(pat2, senior2, notes2, history2, taskDescript2, time2, urgency2);
         task1 = db.getCurrTaskList().get(0);
 
-        db.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
+        db.createTask(pat3, senior3, notes3, history3, taskDescript3, time3, urgency3);
         task2 = db.getCurrTaskList().get(1);
 
 
@@ -64,7 +69,9 @@ public class TestDoctor {
 
     }
 
-//    // getTasks() Test
+
+
+    //    // getTasks() Test
     @Test
     public void testGetTasks(){
         ArrayList<Task> dbTasks = jDoc.getTasks();
@@ -76,7 +83,7 @@ public class TestDoctor {
      //updateTask() Test
     @Test
     public void testFollowUpTask(){
-        jDoc.createFollowUpTask(task1,task2.getSeniorityRequired(), task2.getNotes(), task2.getTaskDescript(), task2.getTime());
+        jDoc.createFollowUpTask(task1,task2.getSeniorityRequired(), task2.getNotes(), task2.getTaskDescript(), task2.getTime(),task2.getUrgency());
 
 
         ArrayList<Task> dbTasks = db.getDoneTaskList();

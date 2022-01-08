@@ -33,6 +33,7 @@ public class TestConsultant {
     String sex3 = "Male";
     String numMRN3 = "234435";
     String location3 = "Imperial College London";
+    String statusCOVID3 = "Blue";
 
     Task t1;
     Patient pat3 = pat;
@@ -41,6 +42,8 @@ public class TestConsultant {
     String history4 = "previous task done: blood test and ECG";
     String taskDescript4 = "clinical review";
     String time4 = "13:24";
+    String urgency2 = "High";
+
 
     Task t2;
     Patient pat5 = pat;
@@ -49,6 +52,8 @@ public class TestConsultant {
     String history5 = "";
     String taskDescript5 = "blood test review";
     String time5 = "ASAP";
+    String urgency3 = "Medium";
+
 
     SingletonDatabase db = SingletonDatabase.getInstance();
     ArrayList<Task> tasks;
@@ -66,11 +71,11 @@ public class TestConsultant {
         db.createJrDoctor(name2, DOB2, sex2, email2, numPager2);
         d2 = db.getJrDoctorList().get(1);
 
-        db.createPatient(name3, DOB3, sex3, location3, numMRN3);
+        db.createPatient(name3, DOB3, sex3, location3, numMRN3, statusCOVID3);
         pat = db.getPatientList().get(0);
-        db.createTask(pat3, senior4, notes4, history4, taskDescript4, time4);
+        db.createTask(pat3, senior4, notes4, history4, taskDescript4, time4,urgency2);
         t1 = db.getCurrTaskList().get(0);
-        db.createTask(pat5, senior5, notes5, history5, taskDescript5, time5);
+        db.createTask(pat5, senior5, notes5, history5, taskDescript5, time5, urgency3);
         t2 = db.getCurrTaskList().get(1);
 
         tasks = new ArrayList<Task>();

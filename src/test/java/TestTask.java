@@ -24,6 +24,7 @@ public class TestTask {
     String sex2 = "Male";
     String numMRN2 = "123456";
     String location2 = "Imperial College London";
+    String statusCOVID2 = "Blue";
 
     Task t;
     Patient pat3 = pat;
@@ -33,6 +34,7 @@ public class TestTask {
     String history3 = "previous task done: blood test and ECG";
     String time3 = "13:24";
     String taskDescript3 = "clinical review";
+    String urgency3 = "High";
 
 
     @BeforeEach
@@ -43,10 +45,10 @@ public class TestTask {
         doc=db.getJrDoctorList().get(0);
         doctorOfTask1 = doc;
 
-        db.createPatient(name2, DOB2, sex2, location2, numMRN2);
+        db.createPatient(name2, DOB2, sex2, location2, numMRN2,statusCOVID2);
         pat = db.getPatientList().get(0);
 
-        db.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
+        db.createTask(pat3, senior3, notes3, history3, taskDescript3, time3, urgency3);
         t = db.getCurrTaskList().get(0);
 
         tasks = new ArrayList<Task>();
@@ -60,6 +62,13 @@ public class TestTask {
         Assertions.assertEquals(doctorOfTask1,t.getDoctorOfTask());
     }
 
+    // Get Urgency of Task Test
+    @Test
+    public void testGetUrgency(){
+        Assertions.assertEquals(urgency3,t.getUrgency());
+    }
+
+    // Get Doctor of Task Test
     @Test
     public void testGetDoctorOfTask(){
         t.setDoctorOfTask(doc);

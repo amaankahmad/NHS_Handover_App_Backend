@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestHospitalPersonnel" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-01T16:55:58" hostname="MacBook-Pro-de-Amaan-2.local" time="0.003">
+<testsuite name="TestHospitalPersonnel" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-01-07T17:18:16" hostname="DESKTOP-8UARG3K" time="0.008">
   <properties/>
   <testcase name="testGetEmail()" classname="TestHospitalPersonnel" time="0.001"/>
+  <testcase name="testDrGetName()" classname="TestHospitalPersonnel" time="0.0"/>
   <testcase name="testGetNumPager()" classname="TestHospitalPersonnel" time="0.001"/>
-  <testcase name="testAddPatient()" classname="TestHospitalPersonnel" time="0.0"/>
-  <testcase name="testCreateTask()" classname="TestHospitalPersonnel" time="0.0"/>
+  <testcase name="testAddPatient()" classname="TestHospitalPersonnel" time="0.001"/>
+  <testcase name="testCreateTask()" classname="TestHospitalPersonnel" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -14,16 +14,19 @@ public class TestPerson {
         p = new Person(name1,DOB1,sex1);
     }
     // getName() Test
+
     @Test
     public void testGetName(){
         Assertions.assertEquals(name1,p.getName());
     }
     // getDOB() test
+
     @Test
     public void testGetDOB(){
         Assertions.assertEquals(DOB1,p.getDOB());
     }
     // getSex test
+
     @Test
     public void testGetSex(){
         Assertions.assertEquals(sex1,p.getSex());

@@ -1,7 +1,7 @@
 package Entities;
 
 public class Person {
-    protected String name;
+    private String name;
     private String DOB;
     private String sex;
 

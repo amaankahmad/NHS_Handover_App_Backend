@@ -81,62 +81,62 @@ public class TestConsultant {
     }
 
     // getTasks() Test
-    @Test
-    public void testGetTasks() {
-        ArrayList<Task> dbTasks = c.getTasks();
-
-        for (int i = 0; i < dbTasks.size(); i++) {
-            Assertions.assertEquals(dbTasks.get(i), tasks.get(i));
-        }
-    }
+//    @Test
+//    public void testGetTasks() {
+//        ArrayList<Task> dbTasks = c.getTasks();
+//
+//        for (int i = 0; i < dbTasks.size(); i++) {
+//            Assertions.assertEquals(dbTasks.get(i), tasks.get(i));
+//        }
+//    }
 
     // getCompletedTasks() Test
-    @Test
-    public void testGetCompletedTasks() {
-        db.archiveTask(t1);
-        db.archiveTask(t2);
-        ArrayList<Task> dbTasks = c.getCompletedTasks();
-
-        for (int i = 0; i < tasks.size(); i++) {
-            Assertions.assertEquals(dbTasks.get(i), tasks.get(i));
-        }
-    }
+//    @Test
+//    public void testGetCompletedTasks() {
+//        db.archiveTask(t1);
+//        db.archiveTask(t2);
+//        ArrayList<Task> dbTasks = c.getCompletedTasks();
+//
+//        for (int i = 0; i < tasks.size(); i++) {
+//            Assertions.assertEquals(dbTasks.get(i), tasks.get(i));
+//        }
+//    }
 
     // getAllTasks() Test
-    @Test
-    public void testGetAllTasks() {
-        db.archiveTask(t2);
-        ArrayList<Task> dbTasks = c.getAllTasks();
-
-        for (int i = 0; i < dbTasks.size(); i++) {
-            Assertions.assertEquals(tasks.get(i), dbTasks.get(i));
-        }
-    }
+//    @Test
+//    public void testGetAllTasks() {
+//        db.archiveTask(t2);
+//        ArrayList<Task> dbTasks = c.getAllTasks();
+//
+//        for (int i = 0; i < dbTasks.size(); i++) {
+//            Assertions.assertEquals(tasks.get(i), dbTasks.get(i));
+//        }
+//    }
 
     // getDoctorTasks() Test
-    @Test
-    public void testGetDoctorTasks() {
-        t1.setDoctorOfTask(d1);
-        t2.setDoctorOfTask(d2);
-
-        ArrayList<ArrayList<Task>> docTasks = c.getDoctorTasks();
-        ArrayList<Task> doc1Tasks = c.getDoctorTasks(d1);
-
-        Assertions.assertEquals(docTasks.size(), 2);
-        Assertions.assertEquals(docTasks.get(0).get(0), t1);
-        Assertions.assertEquals(docTasks.get(1).get(0), t2);
-
-        Assertions.assertEquals(doc1Tasks.size(), 1);
-        Assertions.assertEquals(doc1Tasks.get(0), t1);
-
-        t2.setDoctorOfTask(d1);
-
-        docTasks = c.getDoctorTasks();
-        doc1Tasks = c.getDoctorTasks(d1);
-
-        Assertions.assertEquals(docTasks.get(0).size(), 2);
-        Assertions.assertEquals(doc1Tasks.size(), 2);
-        Assertions.assertEquals(doc1Tasks.get(0), t1);
-        Assertions.assertEquals(doc1Tasks.get(1), t2);
-    }
+//    @Test
+//    public void testGetDoctorTasks() {
+//        t1.setDoctorOfTask(d1);
+//        t2.setDoctorOfTask(d2);
+//
+//        ArrayList<ArrayList<Task>> docTasks = c.getDoctorTasks();
+//        ArrayList<Task> doc1Tasks = c.getDoctorTasks(d1);
+//
+//        Assertions.assertEquals(docTasks.size(), 2);
+//        Assertions.assertEquals(docTasks.get(0).get(0), t1);
+//        Assertions.assertEquals(docTasks.get(1).get(0), t2);
+//
+//        Assertions.assertEquals(doc1Tasks.size(), 1);
+//        Assertions.assertEquals(doc1Tasks.get(0), t1);
+//
+//        t2.setDoctorOfTask(d1);
+//
+//        docTasks = c.getDoctorTasks();
+//        doc1Tasks = c.getDoctorTasks(d1);
+//
+//        Assertions.assertEquals(docTasks.get(0).size(), 2);
+//        Assertions.assertEquals(doc1Tasks.size(), 2);
+//        Assertions.assertEquals(doc1Tasks.get(0), t1);
+//        Assertions.assertEquals(doc1Tasks.get(1), t2);
+//    }
 }

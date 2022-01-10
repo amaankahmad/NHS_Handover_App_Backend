@@ -1,5 +1,9 @@
 package com.example.nhs_handover_backend.Entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Patient extends Person {
     private String patientLocation;
     private String numMRN;

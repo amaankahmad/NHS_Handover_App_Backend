@@ -73,24 +73,24 @@ public class TestJuniorDoctor {
     }
 
 
-    @Test
-    public void takeUpTask(){
-
-        ArrayList<Task> dbJDTasks = jDoc.takeUpTask(jDoc);
-
-        for (int i = 0; i < dbJDTasks.size(); i++) {
-            Assertions.assertEquals(dbJDTasks.get(i), tasksJuniorDoctor.get(i));
-        }
-
-    }
-    @Test
-    public void testGetTasks(){
-
-        ArrayList<Task> dbTasks = jDoc.getTasks();
-
-        for (int i = 0; i < dbTasks.size(); i++) {
-            Assertions.assertEquals(dbTasks.get(i), allTasks.get(i));
-        }
-    }
+//    @Test
+//    public void takeUpTask(){
+//
+//        ArrayList<Task> dbJDTasks = jDoc.takeUpTask(jDoc);
+//
+//        for (int i = 0; i < dbJDTasks.size(); i++) {
+//            Assertions.assertEquals(dbJDTasks.get(i), tasksJuniorDoctor.get(i));
+//        }
+//
+//    }
+//    @Test
+//    public void testGetTasks(){
+//
+//        ArrayList<Task> dbTasks = jDoc.getTasks();
+//
+//        for (int i = 0; i < dbTasks.size(); i++) {
+//            Assertions.assertEquals(dbTasks.get(i), allTasks.get(i));
+//        }
+//    }
 
 }

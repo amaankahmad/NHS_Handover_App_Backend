@@ -1,11 +1,19 @@
 package com.example.nhs_handover_backend.Entities;
 
 import com.example.nhs_handover_backend.Entities.Patient;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 
+import javax.persistence.*;
+
+@Entity
 public class Task {
-    SingletonDatabase db = SingletonDatabase.getInstance();
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @OneToOne
     private Patient patientObject;
+    @OneToOne
     private JuniorDoctor doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;
@@ -27,11 +35,11 @@ public class Task {
     }
 
     public JuniorDoctor getDoctorOfTask(){return doctorOfTask;
+
     }
 
     public String getTime(){
-        return creationTime;
-    }
+        return creationTime;}
 
     public String[] getTaskInfo() {
         String[] res = {additionalNotes, history};
@@ -42,12 +50,18 @@ public class Task {
         return patientObject;
     }
 
-    public String getTaskDescript(){ return taskDescript;}
+    public String getTaskDescript(){
+        return taskDescript;
+    }
 
-    public String getHistory(){ return history;}
+    public String getHistory(){
+        return history;
+    }
 
-    public String getNotes(){ return additionalNotes;}
+    public String getNotes(){
+        return additionalNotes;}
 
-    public String getSeniorityRequired(){ return seniorityRequired; }
+    public String getSeniorityRequired(){
+        return seniorityRequired;}
 }
 

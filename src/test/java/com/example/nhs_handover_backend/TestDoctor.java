@@ -67,37 +67,37 @@ public class TestDoctor {
     }
 
 //    // getTasks() Test
-    @Test
-    public void testGetTasks(){
-        ArrayList<Task> dbTasks = jDoc.getTasks();
-        for (int i = 0; i < dbTasks.size(); i++) {
-            Assertions.assertEquals(dbTasks.get(i), tasks.get(i));
-        }
-    }
+//    @Test
+//    public void testGetTasks(){
+//        ArrayList<Task> dbTasks = jDoc.getTasks();
+//        for (int i = 0; i < dbTasks.size(); i++) {
+//            Assertions.assertEquals(dbTasks.get(i), tasks.get(i));
+//        }
+//    }
 
      //updateTask() Test
-    @Test
-    public void testFollowUpTask(){
-        jDoc.createFollowUpTask(task1,task2.getSeniorityRequired(), task2.getNotes(), task2.getTaskDescript(), task2.getTime());
-
-
-        ArrayList<Task> dbTasks = db.getDoneTaskList();
-        ArrayList<Task> dbCurrTasks = db.getCurrTaskList();
-        Assertions.assertEquals(dbTasks.size(), 1); //task 1 is archived
-        Assertions.assertEquals(dbCurrTasks.size(), 2);//the follow-up task is added
-
-       //Verify components of the follow-up task correspond to our requirements
-        Assertions.assertEquals(dbCurrTasks.get(0), task2);
-        Assertions.assertEquals(dbCurrTasks.get(1).getPatient(), pat3);
-        Assertions.assertEquals(dbCurrTasks.get(1).getTaskDescript(), taskDescript3);
-
-        String notes4 = notes3 + "\nAdditional Notes from Previous Task: \n" + notes2;
-        Assertions.assertEquals(dbCurrTasks.get(1).getNotes(), notes4);
-
-        Assertions.assertEquals(dbCurrTasks.get(1).getSeniorityRequired(), senior3);
-        Assertions.assertEquals(dbCurrTasks.get(1).getHistory(), history2);
-        Assertions.assertEquals(dbCurrTasks.get(1).getTime(), time3);
-    }
+//    @Test
+//    public void testFollowUpTask(){
+//        jDoc.createFollowUpTask(task1,task2.getSeniorityRequired(), task2.getNotes(), task2.getTaskDescript(), task2.getTime());
+//
+//
+//        ArrayList<Task> dbTasks = db.getDoneTaskList();
+//        ArrayList<Task> dbCurrTasks = db.getCurrTaskList();
+//        Assertions.assertEquals(dbTasks.size(), 1); //task 1 is archived
+//        Assertions.assertEquals(dbCurrTasks.size(), 2);//the follow-up task is added
+//
+//       //Verify components of the follow-up task correspond to our requirements
+//        Assertions.assertEquals(dbCurrTasks.get(0), task2);
+//        Assertions.assertEquals(dbCurrTasks.get(1).getPatient(), pat3);
+//        Assertions.assertEquals(dbCurrTasks.get(1).getTaskDescript(), taskDescript3);
+//
+//        String notes4 = notes3 + "\nAdditional Notes from Previous Task: \n" + notes2;
+//        Assertions.assertEquals(dbCurrTasks.get(1).getNotes(), notes4);
+//
+//        Assertions.assertEquals(dbCurrTasks.get(1).getSeniorityRequired(), senior3);
+//        Assertions.assertEquals(dbCurrTasks.get(1).getHistory(), history2);
+//        Assertions.assertEquals(dbCurrTasks.get(1).getTime(), time3);
+//    }
 //
     // archiveTask() Test
     @Test

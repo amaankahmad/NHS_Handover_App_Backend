@@ -2,6 +2,7 @@ package com.example.nhs_handover_backend.Entities;
 
 import java.util.ArrayList;
 
+
 public abstract class Doctor extends HospitalPersonnel {
     SingletonDatabase db = SingletonDatabase.getInstance();
 
@@ -21,7 +22,7 @@ public abstract class Doctor extends HospitalPersonnel {
     public String getEmail() {return emailIn;} //already in hospital personel
 
     public void createFollowUpTask(Task oldTask, String seniorIn, String notesIn, String taskDescriptIn, String creationTimeIn){
-        db.createFollowUp(oldTask, seniorIn, notesIn, taskDescriptIn, creationTimeIn);
+//        db.createFollowUp(oldTask, seniorIn, notesIn, taskDescriptIn, creationTimeIn);
     }
 
     public void archiveTask(Task taskDone){

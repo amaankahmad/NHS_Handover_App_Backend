@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.nhs_handover_backend.TestDoctor" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-07T16:33:54" hostname="MacBook-Pro-de-Amaan-2.local" time="0.004">
+<testsuite name="com.example.nhs_handover_backend.TestDoctor" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-09T22:18:37" hostname="Sachas-MacBook-Air.local" time="0.005">
   <properties/>
-  <testcase name="testGetTasks()" classname="com.example.nhs_handover_backend.TestDoctor" time="0.0"/>
-  <testcase name="testFollowUpTask()" classname="com.example.nhs_handover_backend.TestDoctor" time="0.002"/>
-  <testcase name="testArchiveTask()" classname="com.example.nhs_handover_backend.TestDoctor" time="0.0"/>
+  <testcase name="testArchiveTask()" classname="com.example.nhs_handover_backend.TestDoctor" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

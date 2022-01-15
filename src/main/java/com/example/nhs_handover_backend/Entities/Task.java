@@ -11,9 +11,9 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne
+    @ManyToOne
     private Patient patientObject;
-    @OneToOne
+    @ManyToOne
     private JuniorDoctor doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;
@@ -28,6 +28,10 @@ public class Task {
         history=historyIn;
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
+    }
+
+    public Task() {
+
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){

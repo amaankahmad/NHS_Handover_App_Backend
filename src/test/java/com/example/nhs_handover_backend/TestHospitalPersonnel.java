@@ -65,21 +65,21 @@ public class TestHospitalPersonnel {
     }
 
     //hospital personnel add patient test
-    @Test
-    public void testAddPatient() {
-        ArrayList<Patient> pList = new ArrayList<Patient>();
-        pList.add(pat);
-        hospPersonnel.addPatient(name2, DOB2, sex2, patientLocation2, numMRN2);
-        Assertions.assertEquals(db1.getPatientList().get(0).getNumMRN(), pList.get(0).getNumMRN());
-    }
+//    @Test
+//    public void testAddPatient() {
+//        ArrayList<Patient> pList = new ArrayList<Patient>();
+//        pList.add(pat);
+//        hospPersonnel.addPatient(name2, DOB2, sex2, patientLocation2, numMRN2);
+//        Assertions.assertEquals(db1.getPatientList().get(0).getNumMRN(), pList.get(0).getNumMRN());
+//    }
 
     //hospital personnel create task test
-    @Test
-    public void testCreateTask() {
-
-        ArrayList<Task> tList = new ArrayList<Task>();
-        tList.add(t);
-        hospPersonnel.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
-        Assertions.assertEquals(db1.getPatientTasks(pat3).get(0), tList.get(0));
-    }
+//    @Test
+//    public void testCreateTask() {
+//
+//        ArrayList<Task> tList = new ArrayList<Task>();
+//        tList.add(t);
+//        hospPersonnel.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
+//        Assertions.assertEquals(db1.getPatientTasks(pat3).get(0), tList.get(0));
+//    }
 }

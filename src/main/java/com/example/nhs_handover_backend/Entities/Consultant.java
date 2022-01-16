@@ -10,7 +10,7 @@ public class Consultant extends Doctor {
     }
 
     public ArrayList<Task> getTasks(){
-       // Returns all tasks not completed
+        // Returns all tasks not completed
 //        return db.getCurrTaskList();
         return null;
     }

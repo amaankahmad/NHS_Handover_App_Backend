@@ -2,10 +2,8 @@ package com.example.nhs_handover_backend.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-//@Table (name = "Patient")
+@Entity (name = "Patient")
 public class Patient extends Person {
     private String patientLocation;
     private String numMRN;
@@ -14,10 +12,6 @@ public class Patient extends Person {
         super(nameIn,DOBIn,sexIn);
         patientLocation= patientLocationIn;
         numMRN=numMRNIn;
-    }
-
-    public Patient() {
-        super("TBD","TBD","TBD");
     }
 
     public String getNumMRN(){

@@ -2,8 +2,7 @@ package com.example.nhs_handover_backend.Entities;
 
 import javax.persistence.*;
 
-@Entity
-//@Table (name = "Person")
+@Entity (name = "Person")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Person {
     @Id

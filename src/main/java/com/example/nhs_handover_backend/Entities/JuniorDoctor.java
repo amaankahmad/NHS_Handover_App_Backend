@@ -2,20 +2,14 @@ package com.example.nhs_handover_backend.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.ArrayList;
 
-@Entity
-//@Table (name="JuniorDoctor")
+@Entity (name = "JuniorDoctor")
 public class JuniorDoctor extends Doctor {
 //    SingletonDatabase db = SingletonDatabase.getInstance();
 
     public JuniorDoctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
         super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
-    }
-
-    public JuniorDoctor() {
-        super("name","DOB","TBD","TBD","TBD");
     }
 
     public ArrayList<Task> takeUpTask(Doctor doc){

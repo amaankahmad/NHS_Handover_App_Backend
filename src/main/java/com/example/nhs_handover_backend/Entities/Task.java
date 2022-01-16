@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import javax.persistence.*;
 
-@Entity
+@Entity (name = "Task")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
+    @OneToOne
     private Patient patientObject;
     @ManyToOne
     private JuniorDoctor doctorOfTask;
@@ -28,10 +28,6 @@ public class Task {
         history=historyIn;
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
-    }
-
-    public Task() {
-
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){

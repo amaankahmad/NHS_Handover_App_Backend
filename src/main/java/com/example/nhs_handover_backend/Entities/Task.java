@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 import javax.persistence.*;
 
 @Entity (name = "Task")
+@Table (name = "Task")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +21,8 @@ public class Task {
     private String history;
     private String creationTime;
     private String taskDescript;
+    // if status is FALSE, task is incomplete
+    private Boolean status;
 
     public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         patientObject=patIn;
@@ -28,6 +31,7 @@ public class Task {
         history=historyIn;
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
+        status = false;
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){
@@ -63,5 +67,13 @@ public class Task {
 
     public String getSeniorityRequired(){
         return seniorityRequired;}
+
+    public Boolean getStatus(){
+        return status;
+    }
+
+    public void setStatus(Boolean bool){
+        status= bool;
+    }
 }
 

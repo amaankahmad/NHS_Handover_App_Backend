@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.nhs_handover_backend.TestTask" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-01-17T15:17:35" hostname="Sachas-MacBook-Air.local" time="0.008">
+<testsuite name="com.example.nhs_handover_backend.TestTask" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-01-17T19:54:11" hostname="Sachas-MacBook-Air.local" time="0.005">
   <properties/>
   <testcase name="testGetDoctorOfTask()" classname="com.example.nhs_handover_backend.TestTask" time="0.0"/>
-  <testcase name="testGetPatient()" classname="com.example.nhs_handover_backend.TestTask" time="0.001"/>
-  <testcase name="testGetTime()" classname="com.example.nhs_handover_backend.TestTask" time="0.0"/>
-  <testcase name="testSetDoctorOfTask()" classname="com.example.nhs_handover_backend.TestTask" time="0.001"/>
-  <testcase name="testGetSeniorityRequired()" classname="com.example.nhs_handover_backend.TestTask" time="0.001"/>
+  <testcase name="testGetPatient()" classname="com.example.nhs_handover_backend.TestTask" time="0.0"/>
+  <testcase name="testGetTime()" classname="com.example.nhs_handover_backend.TestTask" time="0.001"/>
+  <testcase name="testSetDoctorOfTask()" classname="com.example.nhs_handover_backend.TestTask" time="0.0"/>
+  <testcase name="testGetSeniorityRequired()" classname="com.example.nhs_handover_backend.TestTask" time="0.002"/>
   <testcase name="testGetTaskDescript()" classname="com.example.nhs_handover_backend.TestTask" time="0.0"/>
-  <testcase name="testGetTaskInfo()" classname="com.example.nhs_handover_backend.TestTask" time="0.001"/>
+  <testcase name="testGetTaskInfo()" classname="com.example.nhs_handover_backend.TestTask" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

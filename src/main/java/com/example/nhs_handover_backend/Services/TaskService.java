@@ -6,15 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TaskService {
-    private final TaskRepository taskRepository;
-
+public class TaskService{
     @Autowired
-    public TaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
+    private TaskRepository taskRepository;
 
-    public void createTask(Task task) {
-        taskRepository.save(task);
-    }
+//    @Autowired
+//    public TaskService(TaskRepository taskRepository) {
+//        this.taskRepository = taskRepository;
+//    }
+
+
 }

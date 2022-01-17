@@ -53,16 +53,16 @@ public class TestHospitalPersonnel {
     }
 
     // Get Hospital Personnel Email() Test
-    @Test
-    public void testGetEmail() {
-        Assertions.assertEquals(email1, hospPersonnel.getEmail());
-    }
-
-    // Get Hospital Personnel Pager Number Test
-    @Test
-    public void testGetNumPager() {
-        Assertions.assertEquals(numPager1, hospPersonnel.getNumPager());
-    }
+//    @Test
+//    public void testGetEmail() {
+//        Assertions.assertEquals(email1, hospPersonnel.getEmail());
+//    }
+//
+//    // Get Hospital Personnel Pager Number Test
+//    @Test
+//    public void testGetNumPager() {
+//        Assertions.assertEquals(numPager1, hospPersonnel.getNumPager());
+//    }
 
     //hospital personnel add patient test
 //    @Test

@@ -10,14 +10,9 @@ public class TaskController {
 
     private final TaskService taskService;
 
-    @Autowired
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
 
-    public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
-        //        db.createTask(patIn, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
-        Task task = new Task(patIn, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
-        taskService.createTask(task);
-    }
+
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.nhs_handover_backend.TestPatient" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-16T04:28:57" hostname="Sachas-MacBook-Air.local" time="0.004">
+<testsuite name="com.example.nhs_handover_backend.TestPatient" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-17T15:17:35" hostname="Sachas-MacBook-Air.local" time="0.007">
   <properties/>
-  <testcase name="testGetPatientLocation()" classname="com.example.nhs_handover_backend.TestPatient" time="0.0"/>
-  <testcase name="testSetPatientLocation()" classname="com.example.nhs_handover_backend.TestPatient" time="0.0"/>
-  <testcase name="testGetNumMRN()" classname="com.example.nhs_handover_backend.TestPatient" time="0.003"/>
+  <testcase name="testGetPatientLocation()" classname="com.example.nhs_handover_backend.TestPatient" time="0.002"/>
+  <testcase name="testSetPatientLocation()" classname="com.example.nhs_handover_backend.TestPatient" time="0.002"/>
+  <testcase name="testGetNumMRN()" classname="com.example.nhs_handover_backend.TestPatient" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

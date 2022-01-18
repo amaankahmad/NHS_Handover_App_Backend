@@ -26,13 +26,10 @@ public class HospitalPersonnelService {
         return arrayList;
     }
 
-    public void addPatient(Patient pat) {
-        patientRepository.save(pat);
-    }
+//    public void addPatient(Patient pat) {
+//        patientRepository.save(pat);
+//    }
 
-    public void createTask(Task task) {
-        taskRepository.save(task);
-    }
 
 
     public void createHospitalPersonnel(HospitalPersonnel hospitalPersonnel) {

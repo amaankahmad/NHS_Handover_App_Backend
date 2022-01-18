@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v1/")
+//@RequestMapping("api/v1/")
 public class TaskController {
     private final TaskService taskService;
 
-    @Autowired
+//    @Autowired
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }

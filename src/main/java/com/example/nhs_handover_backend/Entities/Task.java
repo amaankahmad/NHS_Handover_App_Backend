@@ -32,6 +32,7 @@ public class Task {
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
         status = false;
+
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){
@@ -74,6 +75,10 @@ public class Task {
 
     public void setStatus(Boolean bool){
         status= bool;
+    }
+
+    public Long getId(){
+        return id;
     }
 }
 

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.nhs_handover_backend.TestSingletonDatabase" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-01-17T19:54:11" hostname="Sachas-MacBook-Air.local" time="0.019">
+<testsuite name="com.example.nhs_handover_backend.TestSingletonDatabase" tests="11" skipped="0" failures="0" errors="0" timestamp="2022-01-18T04:52:16" hostname="Sachas-MacBook-Air.local" time="0.087">
   <properties/>
-  <testcase name="testGetPatientTask()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
-  <testcase name="testGetDoctorTasks()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
-  <testcase name="testCreatePatient()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.001"/>
-  <testcase name="testCreateJrDoctor()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
-  <testcase name="testCreateFollowUp()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.002"/>
-  <testcase name="testGetCurrTaskList()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
-  <testcase name="testArchiveTask()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
-  <testcase name="testCreateConsultant()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
+  <testcase name="testGetPatientTask()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.005"/>
+  <testcase name="testGetDoctorTasks()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreatePatient()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.002"/>
+  <testcase name="testCreateJrDoctor()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.006"/>
+  <testcase name="testCreateFollowUp()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.02"/>
+  <testcase name="testGetCurrTaskList()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.001"/>
+  <testcase name="testArchiveTask()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.001"/>
+  <testcase name="testCreateConsultant()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.005"/>
   <testcase name="testCreateTask()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.001"/>
-  <testcase name="testGetDoneTaskList()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
-  <testcase name="testGetInstance()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.001"/>
+  <testcase name="testGetDoneTaskList()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.001"/>
+  <testcase name="testGetInstance()" classname="com.example.nhs_handover_backend.TestSingletonDatabase" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

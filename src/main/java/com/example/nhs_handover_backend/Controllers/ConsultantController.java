@@ -1,13 +1,11 @@
 package com.example.nhs_handover_backend.Controllers;
 
-import com.example.nhs_handover_backend.Entities.Doctor;
+import com.example.nhs_handover_backend.Entities.JuniorDoctor;
 import com.example.nhs_handover_backend.Entities.Task;
-import com.example.nhs_handover_backend.Services.ConsultantService;
+import com.example.nhs_handover_backend.Services.JuniorDoctorService;
 import com.example.nhs_handover_backend.Services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -15,54 +13,42 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("api/v1/consultant/")
 public class ConsultantController {
-    private final ConsultantService consultantService;
     private final TaskService taskService;
+    private final JuniorDoctorService juniorDoctorService;
 
     @Autowired
-    public ConsultantController(ConsultantService consultantService, TaskService taskService) {
-        this.consultantService = consultantService;
+    public ConsultantController(TaskService taskService, JuniorDoctorService juniorDoctorService) {
         this.taskService = taskService;
+        this.juniorDoctorService = juniorDoctorService;
     }
 
-    @RequestMapping("/getTasks")
+    @GetMapping("/getTasks")
     public ArrayList<Task> getTasks(){
-        // Returns all tasks not completed
-//        return db.getCurrTaskList();
         return taskService.getTasks();
-        //return "hello1";
-
     }
-    @RequestMapping("/getCompletedTasks")
+
+    @GetMapping("/getCompletedTasks")
     public ArrayList<Task> getCompletedTasks(){
-        // Returns all tasks completed
-//        return db.getDoneTaskList();
        return taskService.getCompletedTasks();
-       // return "hello2";
     }
 
-    @RequestMapping("/getAllTasks")
+    @GetMapping("/getAllTasks")
     public ArrayList<Task> getAllTasks(){
-        // Returns all tasks completed and not completed
-//        ArrayList<Task> todo = getTasks();
-//        ArrayList<Task> done = getCompletedTasks();
-//        todo.addAll(done);
-//
-//        return todo;
         return taskService.getAllTasks();
-        //return "hello3";
     }
 
-    @RequestMapping("/getDoctorTasks")
+    @GetMapping("/getDoctorTasks")
     public ArrayList<Task> getDoctorTasks(){
-        //Returns all doctors current tasks
-//        return db.getDoctorTasks();
         return taskService.getDoctorTasks();
-        //return "hello4";
     }
 
-    public ArrayList<Task> getDoctorTasks(Doctor doc) {
-        //– if argument then returns tasks for specific doctor
-//        return db.getDoctorTasks(doc);
-        return taskService.getDoctorTasks(doc);
+    @GetMapping("/getAllJuniorDoctors")
+    public ArrayList<JuniorDoctor> getAllJuniorDoctors(){
+        return juniorDoctorService.getAllJuniorDoctors();
+    }
+
+    @GetMapping("/getDoctorTasks/{id}")
+    public ArrayList<Task> getDoctorTasks(@PathVariable("id") Long id) {
+        return taskService.getDoctorTasks(id);
     }
 }

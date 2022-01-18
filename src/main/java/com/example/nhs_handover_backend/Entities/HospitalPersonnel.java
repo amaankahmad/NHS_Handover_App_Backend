@@ -11,10 +11,8 @@ import javax.persistence.*;
 import java.util.Optional;
 
 @Entity (name = "HospitalPersonnel")
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.JOINED)
 public class HospitalPersonnel extends Person{
-    //    @Id
-//    private long id;
     private String email;
     private String numPager;
 //    SingletonDatabase db = SingletonDatabase.getInstance();
@@ -32,15 +30,23 @@ public class HospitalPersonnel extends Person{
 
     public HospitalPersonnel(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn) {
         super(nameIn, DOBIn, sexIn);
-//        email = emailIn;
-//        numPager = numPagerIn;
+        email = emailIn;
+        numPager = numPagerIn;
 //        TaskRepository repo = ctx.getBean("");
 //        MyClass myclass = new MyClass(repo)
 //        return myclass;
     }
 
-    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn) {
-        super(nameIn, DOBIn, sexIn);
+//    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn) {
+//        super(nameIn, DOBIn, sexIn);
+//        email="tbd";
+//        numPager="tbd";
+//    }
+
+    public HospitalPersonnel() {
+        super("TBD","TBD","TBD");
+        email = "TBD";
+        numPager = "TBD";
     }
 
 

@@ -14,6 +14,12 @@ public class Patient extends Person {
         numMRN=numMRNIn;
     }
 
+    public Patient() {
+        super("TBD","TBD","TBD");
+        patientLocation="TBD";
+        numMRN="TBD";
+    }
+
     public String getNumMRN(){
         return numMRN;
     }

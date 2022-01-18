@@ -32,24 +32,40 @@ public class HospitalPersonnelController {
         return hospitalPersonnelService.getAllHospitalPersons();
     }
 
-    // Create hospital personnel
-    //@PostMapping("/hospital_personnel")
+    @GetMapping("/getAllPatients")
+    public ArrayList<Patient> getAllPatients(){
+        return patientService.getAllPatients();
+    }
+
+     //Create hospital personnel
+    @PostMapping("/createHospitalPerson")
     public void createHospitalPerson(HospitalPersonnel doc) {
         // Directly mapping the post json request body to the HospitalPersonnel object
         //db.createHospitalPersonnel(doc.getName(), doc.getDOB(), doc.getSex(), doc.getEmail(), doc.getNumPager());
         hospitalPersonnelService.createHospitalPersonnel(doc);
     }
 
-   // @PostMapping("/hospital_personnel/addPatient")
-    public void addPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
-//        db.createPatient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
-        Patient pat = new Patient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
-        patientService.addPatient(pat);
+    @PostMapping("/addPatient/{patient}")
+    public void addPatient(@PathVariable("patient") Patient patient){
+          patientService.addPatient(patient);
     }
 
-   // @PostMapping("/hospital_personnel/createTask")
-    public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
-        Task task = new Task(patIn, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
+    @PostMapping("/createTask/{task}")
+    public void createTask(@PathVariable("task") Task task){
         taskService.createTask(task);
+    }
+
+    @PostMapping("/createFollowUpTask")
+    public void createFollowUpTask(Long oldTaskId, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
+        String[] pastInfo = taskService.getTaskInfo(oldTaskId);
+        Patient p = taskService.getPatient(oldTaskId);
+        notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
+        Task task = new Task(p, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
+        taskService.createTask(task);
+    }
+
+        @GetMapping("/archiveTask/{id}")
+        public void archiveTask(@PathVariable("id") Long id){
+        taskService.archiveTask(id);
     }
 }

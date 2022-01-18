@@ -1,12 +1,14 @@
 package com.example.nhs_handover_backend.Services;
 
 import com.example.nhs_handover_backend.Entities.Doctor;
+import com.example.nhs_handover_backend.Entities.Patient;
 import com.example.nhs_handover_backend.Entities.Task;
 import com.example.nhs_handover_backend.Repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class TaskService{
@@ -44,27 +46,23 @@ public class TaskService{
     }
 
     public ArrayList<Task> getAllTasks() {
-        ArrayList<Task> arrayList = new ArrayList<>();
-        taskRepository.findAll().forEach(arrayList::add);
-        return arrayList;
+        return (ArrayList<Task>) taskRepository.findAll();
     }
 
     public ArrayList<Task> getDoctorTasks(){
         //Returns all doctors current tasks
 //        return db.getDoctorTasks();
         //return taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE);
-        ArrayList<Task> arrayList = new ArrayList<>();
-        taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE).forEach(arrayList::add);
-        return arrayList;
+        //ArrayList<Task> arrayList = new ArrayList<>();
+        return taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE);
+        //return arrayList;
     }
 
-    public ArrayList<Task> getDoctorTasks(Doctor doc) {
+    public ArrayList<Task> getDoctorTasks(Long id) {
         //– if argument then returns tasks for specific doctor
 //        return db.getDoctorTasks(doc);
         //return taskRepository.findByDoctorOfTaskOrderByCreationTime(doc);
-        ArrayList<Task> arrayList = new ArrayList<>();
-        taskRepository.findByDoctorOfTaskOrderByCreationTime(doc).forEach(arrayList::add);
-        return arrayList;
+        return taskRepository.findByDoctorOfTaskIdOrderByCreationTime(id);
     }
 
     public void createTask(Task task) {
@@ -76,7 +74,21 @@ public class TaskService{
     }
 
     public ArrayList<Task> getJuniorDoctorTasks() {
-       return taskRepository.findBySeniorityRequired("Junior Doctor");
+        return taskRepository.findBySeniorityRequired("junior doctor");
+    }
+
+    public Patient getPatient(Long oldTaskId) {
+        Task task = taskRepository.findById(oldTaskId).get();;
+        return task.getPatient();
+    }
+
+    public String[] getTaskInfo(Long oldTaskId) {
+        Task task = taskRepository.findById(oldTaskId).get();
+        return task.getTaskInfo();
+    }
+
+    public void archiveTask(Long id) {
+        taskRepository.archiveTask(id);
     }
     //    public void archiveTask(Long id) {
 //        taskRepository.updateStatus(id,true);

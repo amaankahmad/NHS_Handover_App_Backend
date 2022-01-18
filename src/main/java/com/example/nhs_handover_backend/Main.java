@@ -1,11 +1,11 @@
 package com.example.nhs_handover_backend;
 
-import com.example.nhs_handover_backend.Entities.SingletonDatabase;
+//import com.example.nhs_handover_backend.Entities.SingletonDatabase;
 import com.example.nhs_handover_backend.Entities.HospitalPersonnel;
 
 public class Main {
     public static void main(String[] args) {
-        SingletonDatabase hospitalDB = SingletonDatabase.getInstance();
+        //SingletonDatabase hospitalDB = SingletonDatabase.getInstance();
 
         String name1 = "Peter James";
         String DOB1 = "20/08/1975";

@@ -35,6 +35,17 @@ public class Task {
 
     }
 
+    public Task() {
+        Patient newPatient = new Patient("TBD","TBD","TBD","TBD","TBD");
+        patientObject=newPatient;
+        seniorityRequired="TBD";
+        additionalNotes="TBD";
+        history="TBD";
+        taskDescript = "TBD";
+        creationTime="TBD";
+        status = false;
+    }
+
     public void setDoctorOfTask(JuniorDoctor docIn){
         doctorOfTask= docIn;
     }

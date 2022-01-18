@@ -18,6 +18,12 @@ public class Person {
         sex=sexIn;
     }
 
+    public Person() {
+        name = "tbd";
+        DOB = "tbd";
+        sex = "tbd";
+    }
+
     public String getName(){
         return name;
     }

@@ -38,10 +38,9 @@ public class HospitalPersonnelController {
     }
 
      //Create hospital personnel
-    @PostMapping("/createHospitalPerson")
-    public void createHospitalPerson(HospitalPersonnel doc) {
+    @PostMapping("/createHospitalPerson/{doc}")
+    public void createHospitalPerson(@PathVariable("doc") HospitalPersonnel doc) {
         // Directly mapping the post json request body to the HospitalPersonnel object
-        //db.createHospitalPersonnel(doc.getName(), doc.getDOB(), doc.getSex(), doc.getEmail(), doc.getNumPager());
         hospitalPersonnelService.createHospitalPersonnel(doc);
     }
 
@@ -55,6 +54,7 @@ public class HospitalPersonnelController {
         taskService.createTask(task);
     }
 
+    //NOT CORRECT POST MAPPING
     @PostMapping("/createFollowUpTask")
     public void createFollowUpTask(Long oldTaskId, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
         String[] pastInfo = taskService.getTaskInfo(oldTaskId);

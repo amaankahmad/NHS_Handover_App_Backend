@@ -10,10 +10,6 @@ import java.util.ArrayList;
 public class HospitalPersonnelService {
     @Autowired
     private HospitalPersonnelRepository hospitalPersonnelRepository;
-//    @Autowired
-//    private TaskRepository taskRepository;
-//    @Autowired
-//    private PatientRepository patientRepository;
 
     @Autowired
     public HospitalPersonnelService(HospitalPersonnelRepository hospitalPersonnelRepository) {
@@ -23,12 +19,6 @@ public class HospitalPersonnelService {
     public ArrayList<HospitalPersonnel> getAllHospitalPersons(){
         return (ArrayList<HospitalPersonnel>) hospitalPersonnelRepository.findAll();
     }
-
-//    public void addPatient(Patient pat) {
-//        patientRepository.save(pat);
-//    }
-
-
 
     public void createHospitalPersonnel(HospitalPersonnel hospitalPersonnel) {
         hospitalPersonnelRepository.save(hospitalPersonnel);

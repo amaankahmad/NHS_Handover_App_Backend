@@ -1,4 +1,5 @@
 package com.example.nhs_handover_backend.Repositories;
+import com.example.nhs_handover_backend.Entities.Doctor;
 import com.example.nhs_handover_backend.Entities.Task;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -12,12 +13,6 @@ import java.util.Optional;
 @Repository
 public interface TaskRepository extends CrudRepository<Task, Long> {
 
-//    public Iterable<Task> findAllByStatus(Iterable<Boolean> booleans) {
-//        return null;
-//    }
-//    public void findstuff(){
-//        var query= ""
-//    }
     public ArrayList<Task> findByStatus(Boolean bool);
     public ArrayList<Task> findByStatusOrderByDoctorOfTask(Boolean bool);
     public ArrayList<Task> findByDoctorOfTaskIdOrderByCreationTime(Long id);
@@ -25,7 +20,7 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
     @Modifying
     @Query("update Task u set u.status = TRUE where u.id = :id")
     void archiveTask(Long id);
-//    @Override
-//    public Optional<Task> findById(Long id);
-    //public void updateStatus(@Param("id") Long id, @Param("status") Boolean status);
+    @Modifying
+    @Query("update Task u set u.doctorOfTask = :doctorOfTask where u.id = :id")
+    void takeUpTask(Doctor doc, Long id);
 }

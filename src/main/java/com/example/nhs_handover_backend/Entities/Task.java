@@ -1,9 +1,5 @@
 package com.example.nhs_handover_backend.Entities;
 
-import com.example.nhs_handover_backend.Entities.Patient;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-import org.springframework.boot.autoconfigure.web.WebProperties;
-
 import javax.persistence.*;
 
 @Entity (name = "Task")

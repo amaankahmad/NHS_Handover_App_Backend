@@ -59,9 +59,6 @@ public class TaskService{
     }
 
     public ArrayList<Task> getDoctorTasks(Long id) {
-        //– if argument then returns tasks for specific doctor
-//        return db.getDoctorTasks(doc);
-        //return taskRepository.findByDoctorOfTaskOrderByCreationTime(doc);
         return taskRepository.findByDoctorOfTaskIdOrderByCreationTime(id);
     }
 
@@ -69,8 +66,8 @@ public class TaskService{
         taskRepository.save(task);
     }
 
-    public void takeUpTask(Doctor doc) {
-        //update doctor of task
+    public void takeUpTask(Doctor doc, Long id) {
+        taskRepository.takeUpTask(doc, id);
     }
 
     public ArrayList<Task> getJuniorDoctorTasks() {
@@ -90,9 +87,6 @@ public class TaskService{
     public void archiveTask(Long id) {
         taskRepository.archiveTask(id);
     }
-    //    public void archiveTask(Long id) {
-//        taskRepository.updateStatus(id,true);
-//    }
 
 
 }

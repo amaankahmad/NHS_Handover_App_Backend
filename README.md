@@ -6,9 +6,9 @@ We would like an app-based system whereby handover can be efficiently logged and
 
 This repository constitutes the backend of our app and is linked to the frontend repository NHS_Handover_App_Frontend in order to have a functioning app. 
 
-# Classes
+# Object Oriented Design
 
-This project is divided into 8 classes, each corresponding to a different object type required for our app. 
+Our Object Oriented design structure is based off the key entities in the handover process and how they interact with each other. We made use of inheritance to create a pyramid class structure with increasing specialisation with depth. This project is divided into 8 classes, each corresponding to the object type required for our app, and are listed below. 
 
 - Person
 

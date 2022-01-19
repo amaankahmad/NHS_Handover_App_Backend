@@ -43,10 +43,16 @@ public class HospitalPersonnelController {
         // Directly mapping the post json request body to the HospitalPersonnel object
         hospitalPersonnelService.createHospitalPersonnel(doc);
     }
+//   Make patient with individual parameters instead of patient object
+//    @RequestMapping(path="/addPatient/{name}/{dob}/{sex}/{loc}/{mrn}", method = RequestMethod.GET)
+//    public void addPatient(@PathVariable("name") String nameIn,@PathVariable("dob") String DOBIn,@PathVariable("sex") String sexIn,@PathVariable("loc") String locationIn,@PathVariable("mrn") String numMRNIn){
+//          Patient p = new Patient(nameIn,DOBIn,sexIn,locationIn,numMRNIn);
+//        patientService.addPatient(p);
+//    }
 
-    @PostMapping("/addPatient/{patient}")
-    public void addPatient(@PathVariable("patient") Patient patient){
-          patientService.addPatient(patient);
+    @RequestMapping(path="/addPatient/{pat}", method = RequestMethod.GET)
+    public void addPatient(@PathVariable("pat") Patient patIn){
+        patientService.addPatient(patIn);
     }
 
     @PostMapping("/createTask/{task}")
@@ -54,18 +60,18 @@ public class HospitalPersonnelController {
         taskService.createTask(task);
     }
 
-    //NOT CORRECT POST MAPPING
-    @PostMapping("/createFollowUpTask")
-    public void createFollowUpTask(Long oldTaskId, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
-        String[] pastInfo = taskService.getTaskInfo(oldTaskId);
-        Patient p = taskService.getPatient(oldTaskId);
+    @RequestMapping(path="/createFollowUpTask/{oldTask}/{senior}/{notes}/{taskDescription}/{creationTime}", method = RequestMethod.GET)
+    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn){
+        taskService.archiveTask(oldTask.getId());
+        String[] pastInfo = taskService.getTaskInfo(oldTask.getId());
+        Patient p = taskService.getPatient(oldTask.getId());
         notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
-        Task task = new Task(p, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
-        taskService.createTask(task);
+        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn);
+        taskService.createTask(followUp);
     }
 
-        @GetMapping("/archiveTask/{id}")
-        public void archiveTask(@PathVariable("id") Long id){
+    @GetMapping("/archiveTask/{id}")
+    public void archiveTask(@PathVariable("id") Long id){
         taskService.archiveTask(id);
     }
 }

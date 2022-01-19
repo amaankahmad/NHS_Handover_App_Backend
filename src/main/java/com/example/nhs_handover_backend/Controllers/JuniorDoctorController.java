@@ -19,7 +19,7 @@ public class JuniorDoctorController {
         this.taskService = taskService;
     }
 
-    @GetMapping("/takeUpTask/{task}/{doc}")
+    @RequestMapping(path="/takeUpTask/{task}/{doc}", method = RequestMethod.GET)
     public void takeUpTask(@PathVariable("task") Task task,@PathVariable("doc") Doctor doc){
         //assigns task to themselves
         Long id = task.getId();

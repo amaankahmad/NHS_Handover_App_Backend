@@ -43,12 +43,12 @@ public class HospitalPersonnelController {
         // Directly mapping the post json request body to the HospitalPersonnel object
         hospitalPersonnelService.createHospitalPersonnel(doc);
     }
-//   Make patient with individual parameters instead of patient object
-//    @RequestMapping(path="/addPatient/{name}/{dob}/{sex}/{loc}/{mrn}", method = RequestMethod.GET)
-//    public void addPatient(@PathVariable("name") String nameIn,@PathVariable("dob") String DOBIn,@PathVariable("sex") String sexIn,@PathVariable("loc") String locationIn,@PathVariable("mrn") String numMRNIn){
-//          Patient p = new Patient(nameIn,DOBIn,sexIn,locationIn,numMRNIn);
-//        patientService.addPatient(p);
-//    }
+   //Make patient with individual parameters instead of patient object
+    @RequestMapping(path="/addPatient/{name}/{dob}/{sex}/{loc}/{mrn}", method = RequestMethod.GET)
+    public void addPatient(@PathVariable("name") String nameIn,@PathVariable("dob") String DOBIn,@PathVariable("sex") String sexIn,@PathVariable("loc") String locationIn,@PathVariable("mrn") String numMRNIn){
+          Patient p = new Patient(nameIn,DOBIn,sexIn,locationIn,numMRNIn);
+        patientService.addPatient(p);
+    }
 
     @RequestMapping(path="/addPatient/{pat}", method = RequestMethod.GET)
     public void addPatient(@PathVariable("pat") Patient patIn){

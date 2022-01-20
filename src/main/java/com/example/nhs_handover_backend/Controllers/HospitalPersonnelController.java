@@ -85,6 +85,26 @@ public class HospitalPersonnelController {
         taskService.createTask(followUp);
     }
 
+    @RequestMapping(path="/getSeniority/{emailIn}")
+    public String getSeniority(@PathVariable("emailIn") String emailIn){
+        Long id = hospitalPersonnelService.getIdFromEmail(emailIn);
+        ArrayList<JuniorDoctor> juniorDocList = juniorDoctorService.getAllJuniorDoctors();
+        ArrayList<Consultant> consultantList = consultantService.getAllConsultants();
+        for (int i=0; i<= juniorDocList.size();i++){
+            if (juniorDocList.get(i).getId() == id){
+                return new String("junior doctor");
+            }
+
+        }
+        for (int i=0; i<= consultantList.size(); i++){
+            if (consultantList.get(i).getId() == id){
+                return new String("consultant");
+            }
+
+        }
+        return new String ("emial does not exist");
+    }
+
     @GetMapping("/archiveTask/{id}")
     public void archiveTask(@PathVariable("id") Long id){
         taskService.archiveTask(id);

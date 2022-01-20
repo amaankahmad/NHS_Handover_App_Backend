@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import java.util.ArrayList;
 
 @Entity
-public class Consultant extends Doctor {
+public class Consultant extends HospitalPersonnel {
 //    SingletonDatabase db = SingletonDatabase.getInstance();
 
     public Consultant(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){

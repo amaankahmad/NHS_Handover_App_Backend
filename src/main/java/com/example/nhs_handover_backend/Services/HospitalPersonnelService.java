@@ -23,4 +23,8 @@ public class HospitalPersonnelService {
     public void createHospitalPersonnel(HospitalPersonnel hospitalPersonnel) {
         hospitalPersonnelRepository.save(hospitalPersonnel);
     }
+
+    public Long getIdFromEmail(String emailIn){
+        return hospitalPersonnelRepository.findByEmail(emailIn).get(0).getId();
+    }
 }

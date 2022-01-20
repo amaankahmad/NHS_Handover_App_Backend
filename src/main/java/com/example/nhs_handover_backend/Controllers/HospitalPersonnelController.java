@@ -1,8 +1,6 @@
 package com.example.nhs_handover_backend.Controllers;
 import com.example.nhs_handover_backend.Entities.*;
-import com.example.nhs_handover_backend.Services.HospitalPersonnelService;
-import com.example.nhs_handover_backend.Services.PatientService;
-import com.example.nhs_handover_backend.Services.TaskService;
+import com.example.nhs_handover_backend.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,12 +16,18 @@ public class HospitalPersonnelController {
     private final PatientService patientService;
     @Autowired
     private final TaskService taskService;
+    @Autowired
+    private ConsultantService consultantService;
+    @Autowired
+    private JuniorDoctorService juniorDoctorService;
 
     @Autowired
-    public HospitalPersonnelController(HospitalPersonnelService hospitalPersonnelService, PatientService patientService,TaskService taskService) {
+    public HospitalPersonnelController(HospitalPersonnelService hospitalPersonnelService, PatientService patientService,TaskService taskService,ConsultantService consultantService, JuniorDoctorService juniorDoctorService) {
         this.hospitalPersonnelService = hospitalPersonnelService;
         this.patientService = patientService;
         this.taskService = taskService;
+        this.consultantService = consultantService;
+        this.juniorDoctorService = juniorDoctorService;
     }
 
     @GetMapping("/getAllHospitalPersons")
@@ -43,6 +47,17 @@ public class HospitalPersonnelController {
         // Directly mapping the post json request body to the HospitalPersonnel object
         hospitalPersonnelService.createHospitalPersonnel(doc);
     }
+
+    @PostMapping("/createConsultant")
+    public void createConsultant(@PathVariable("doc") Consultant doc){
+        consultantService.createConsultant(doc);
+    }
+
+    @PostMapping("/createJuniorDoctor")
+    public void createJuniorDoctor(@PathVariable("doc") JuniorDoctor doc){
+        juniorDoctorService.createJuniorDoctor(doc);
+    }
+
    //Make patient with individual parameters instead of patient object
     @RequestMapping(path="/addPatient/{name}/{dob}/{sex}/{loc}/{mrn}", method = RequestMethod.GET)
     public void addPatient(@PathVariable("name") String nameIn,@PathVariable("dob") String DOBIn,@PathVariable("sex") String sexIn,@PathVariable("loc") String locationIn,@PathVariable("mrn") String numMRNIn){

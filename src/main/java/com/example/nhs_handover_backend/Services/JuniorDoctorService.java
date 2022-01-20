@@ -19,4 +19,8 @@ public class JuniorDoctorService {
     public ArrayList<JuniorDoctor> getAllJuniorDoctors(){
         return (ArrayList<JuniorDoctor>) juniorDoctorRepository.findAll();
     }
+
+    public void createJuniorDoctor(JuniorDoctor doc){
+        juniorDoctorRepository.save(doc);
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.nhs_handover_backend.Services;
 
-import com.example.nhs_handover_backend.Entities.Doctor;
+//import com.example.nhs_handover_backend.Entities.Doctor;
+import com.example.nhs_handover_backend.Entities.HospitalPersonnel;
 import com.example.nhs_handover_backend.Entities.Patient;
 import com.example.nhs_handover_backend.Entities.Task;
 import com.example.nhs_handover_backend.Repositories.TaskRepository;
@@ -66,7 +67,7 @@ public class TaskService{
         taskRepository.save(task);
     }
 
-    public void takeUpTask(Doctor doc, Long id) {
+    public void takeUpTask(HospitalPersonnel doc, Long id) {
         taskRepository.takeUpTask(doc, id);
     }
 

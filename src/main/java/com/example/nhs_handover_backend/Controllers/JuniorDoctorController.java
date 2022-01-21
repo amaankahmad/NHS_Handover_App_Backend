@@ -1,5 +1,6 @@
 package com.example.nhs_handover_backend.Controllers;
-import com.example.nhs_handover_backend.Entities.Doctor;
+//import com.example.nhs_handover_backend.Entities.Doctor;
+import com.example.nhs_handover_backend.Entities.HospitalPersonnel;
 import com.example.nhs_handover_backend.Entities.Task;
 import com.example.nhs_handover_backend.Services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class JuniorDoctorController {
     }
 
     @RequestMapping(path="/takeUpTask/{task}/{doc}", method = RequestMethod.GET)
-    public void takeUpTask(@PathVariable("task") Task task,@PathVariable("doc") Doctor doc){
+    public void takeUpTask(@PathVariable("task") Task task,@PathVariable("doc") HospitalPersonnel doc){
         //assigns task to themselves
         Long id = task.getId();
         taskService.takeUpTask(doc,id);

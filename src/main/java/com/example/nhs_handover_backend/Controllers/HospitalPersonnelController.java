@@ -77,12 +77,12 @@ public class HospitalPersonnelController {
     }
 
     @RequestMapping(path="/createFollowUpTask/{oldTask}/{senior}/{notes}/{taskDescription}/{creationTime}", method = RequestMethod.GET)
-    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn){
+    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn, @PathVariable("duration") String durationIn, @PathVariable("covidStatus") String covidStatusIn){
         taskService.archiveTask(oldTask.getId());
         String[] pastInfo = taskService.getTaskInfo(oldTask.getId());
         Patient p = taskService.getPatient(oldTask.getId());
         notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
-        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn);
+        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn, durationIn, covidStatusIn);
         taskService.createTask(followUp);
     }
 

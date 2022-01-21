@@ -17,10 +17,13 @@ public class Task {
     private String history;
     private String creationTime;
     private String taskDescript;
+    private String covidStatus;
+    private String duraton;
     // if status is FALSE, task is incomplete
     private Boolean status;
 
-    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
+
+    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn, String durationIn, String covidStatusIn){
         patientObject=patIn;
         seniorityRequired=seniorIn;
         additionalNotes=notesIn;
@@ -28,6 +31,8 @@ public class Task {
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
         status = false;
+        covidStatus = covidStatusIn;
+        duraton = durationIn;
 
     }
 
@@ -86,6 +91,14 @@ public class Task {
 
     public Long getId(){
         return id;
+    }
+
+    public String getCovidStatus() {
+        return covidStatus;
+    }
+
+    public String getDuraton() {
+        return duraton;
     }
 }
 

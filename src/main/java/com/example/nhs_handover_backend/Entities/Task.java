@@ -8,9 +8,8 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne
-    private Patient patientObject;
     @ManyToOne
+    private Patient patientObject;
     private JuniorDoctor doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;
@@ -20,7 +19,7 @@ public class Task {
     // if status is FALSE, task is incomplete
     private Boolean status;
 
-    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
+    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn ){
         patientObject=patIn;
         seniorityRequired=seniorIn;
         additionalNotes=notesIn;
@@ -28,7 +27,6 @@ public class Task {
         taskDescript = taskDescriptIn;
         creationTime=creationTimeIn;
         status = false;
-
     }
 
     public Task() {

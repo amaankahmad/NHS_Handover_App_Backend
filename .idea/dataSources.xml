@@ -8,18 +8,11 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/nhs_app</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="PostgreSQL" uuid="db43a932-6e7c-448c-9654-1c8961c01be6">
+    <data-source source="LOCAL" name="app@localhost" uuid="bbeb2184-90ce-4d47-a965-29113c4d7c41">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-176-34-116-203.eu-west-1.compute.amazonaws.com :5432/d10rekhmah3pok</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="PostgreSQL [2]" uuid="f8b12458-3715-44af-8597-f4c6e9b74dc8">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-176-34-116-203.eu-west-1.compute.amazonaws.com :5432/d10rekhmah3pok</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

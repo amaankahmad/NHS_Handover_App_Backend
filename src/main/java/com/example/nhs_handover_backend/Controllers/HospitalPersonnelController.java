@@ -15,17 +15,15 @@ public class HospitalPersonnelController {
     @Autowired
     private final PatientService patientService;
     @Autowired
-    private final TaskService taskService;
-    @Autowired
     private ConsultantService consultantService;
     @Autowired
     private JuniorDoctorService juniorDoctorService;
 
     @Autowired
-    public HospitalPersonnelController(HospitalPersonnelService hospitalPersonnelService, PatientService patientService,TaskService taskService,ConsultantService consultantService, JuniorDoctorService juniorDoctorService) {
+    public HospitalPersonnelController(HospitalPersonnelService hospitalPersonnelService, PatientService patientService,
+                                       ConsultantService consultantService, JuniorDoctorService juniorDoctorService) {
         this.hospitalPersonnelService = hospitalPersonnelService;
         this.patientService = patientService;
-        this.taskService = taskService;
         this.consultantService = consultantService;
         this.juniorDoctorService = juniorDoctorService;
     }
@@ -41,52 +39,21 @@ public class HospitalPersonnelController {
         return patientService.getAllPatients();
     }
 
-     //Create hospital personnel
-    @PostMapping("/createHospitalPerson/{doc}")
-    public void createHospitalPerson(@PathVariable("doc") HospitalPersonnel doc) {
+    // Create hospital personnel
+    @PostMapping("/createHospitalPerson")
+    public void createHospitalPerson(@RequestBody HospitalPersonnel doc) {
         // Directly mapping the post json request body to the HospitalPersonnel object
+        System.out.println(doc.getName());
         hospitalPersonnelService.createHospitalPersonnel(doc);
     }
 
     @PostMapping("/createConsultant")
-    public void createConsultant(@PathVariable("doc") Consultant doc){
+    public void createConsultant(@RequestBody Consultant doc){
         consultantService.createConsultant(doc);
     }
 
     @PostMapping("/createJuniorDoctor")
-    public void createJuniorDoctor(@PathVariable("doc") JuniorDoctor doc){
+    public void createJuniorDoctor(@RequestBody JuniorDoctor doc){
         juniorDoctorService.createJuniorDoctor(doc);
-    }
-
-   //Make patient with individual parameters instead of patient object
-    @RequestMapping(path="/addPatient/{name}/{dob}/{sex}/{loc}/{mrn}", method = RequestMethod.GET)
-    public void addPatient(@PathVariable("name") String nameIn,@PathVariable("dob") String DOBIn,@PathVariable("sex") String sexIn,@PathVariable("loc") String locationIn,@PathVariable("mrn") String numMRNIn){
-          Patient p = new Patient(nameIn,DOBIn,sexIn,locationIn,numMRNIn);
-        patientService.addPatient(p);
-    }
-
-    @RequestMapping(path="/addPatient/{pat}", method = RequestMethod.GET)
-    public void addPatient(@PathVariable("pat") Patient patIn){
-        patientService.addPatient(patIn);
-    }
-
-    @PostMapping("/createTask/{task}")
-    public void createTask(@PathVariable("task") Task task){
-        taskService.createTask(task);
-    }
-
-    @RequestMapping(path="/createFollowUpTask/{oldTask}/{senior}/{notes}/{taskDescription}/{creationTime}", method = RequestMethod.GET)
-    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn){
-        taskService.archiveTask(oldTask.getId());
-        String[] pastInfo = taskService.getTaskInfo(oldTask.getId());
-        Patient p = taskService.getPatient(oldTask.getId());
-        notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
-        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn);
-        taskService.createTask(followUp);
-    }
-
-    @GetMapping("/archiveTask/{id}")
-    public void archiveTask(@PathVariable("id") Long id){
-        taskService.archiveTask(id);
     }
 }

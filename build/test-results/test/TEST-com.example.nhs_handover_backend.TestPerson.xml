@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.nhs_handover_backend.TestPerson" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-20T22:25:07" hostname="Sachas-Air" time="0.002">
+<testsuite name="com.example.nhs_handover_backend.TestPerson" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-21T03:14:50" hostname="Sachas-Air" time="0.001">
   <properties/>
   <testcase name="testGetName()" classname="com.example.nhs_handover_backend.TestPerson" time="0.0"/>
   <testcase name="testGetDOB()" classname="com.example.nhs_handover_backend.TestPerson" time="0.001"/>

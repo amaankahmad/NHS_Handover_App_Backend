@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.566s</div>
+<div class="counter">0.315s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.566s</td>
+<td class="success">0.315s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,23 +87,23 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>01:25:23.824 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-01:25:23.837 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-01:25:23.913 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-01:25:23.944 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests], using SpringBootContextLoader
-01:25:23.960 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: class path resource [com/example/nhs_handover_backend/NhsHandoverBackendApplicationTests-context.xml] does not exist
-01:25:23.962 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: class path resource [com/example/nhs_handover_backend/NhsHandoverBackendApplicationTestsContext.groovy] does not exist
-01:25:23.964 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-01:25:23.970 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: NhsHandoverBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-01:25:24.112 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]
-01:25:24.242 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/sachaavey/Desktop/NHS app/NHS_Handover_App_Backend/build/classes/java/main/com/example/nhs_handover_backend/NhsHandoverBackendApplication.class]
-01:25:24.251 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.nhs_handover_backend.NhsHandoverBackendApplication for test class com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests
-01:25:24.421 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: using defaults.
-01:25:24.422 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-01:25:24.438 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@37b70343, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@306851c7, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@12bcd0c0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4879f0f2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@47db5fa5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@354fc8f0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@41813449, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4678a2eb, org.springframework.test.context.event.EventPublishingTestExecutionListener@5b43fbf6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1080b026, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@58ebfd03, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5b07730f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1fdfafd2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@a4b2d8f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@dcfda20]
-01:25:24.442 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@556d0826 testClass = NhsHandoverBackendApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@66ce957f testClass = NhsHandoverBackendApplicationTests, locations = '{}', classes = '{class com.example.nhs_handover_backend.NhsHandoverBackendApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1838ccb8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6bc407fd, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5ef5c734, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4671115f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@54504ecd, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@58a9760d], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-01:25:24.529 [Test worker] DEBUG org.springframework.boot.ApplicationServletEnvironment - Activating profiles []
-01:25:24.530 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+<pre>01:32:39.047 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+01:32:39.106 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+01:32:39.203 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+01:32:39.226 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests], using SpringBootContextLoader
+01:32:39.233 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: class path resource [com/example/nhs_handover_backend/NhsHandoverBackendApplicationTests-context.xml] does not exist
+01:32:39.234 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: class path resource [com/example/nhs_handover_backend/NhsHandoverBackendApplicationTestsContext.groovy] does not exist
+01:32:39.235 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+01:32:39.237 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: NhsHandoverBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:32:39.429 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]
+01:32:39.539 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/sachaavey/Desktop/NHS app/NHS_Handover_App_Backend/build/classes/java/main/com/example/nhs_handover_backend/NhsHandoverBackendApplication.class]
+01:32:39.541 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.nhs_handover_backend.NhsHandoverBackendApplication for test class com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests
+01:32:39.710 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.nhs_handover_backend.NhsHandoverBackendApplicationTests]: using defaults.
+01:32:39.711 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+01:32:39.726 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@37b70343, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@306851c7, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@12bcd0c0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4879f0f2, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@47db5fa5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@354fc8f0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@41813449, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4678a2eb, org.springframework.test.context.event.EventPublishingTestExecutionListener@5b43fbf6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1080b026, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@58ebfd03, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5b07730f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1fdfafd2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@a4b2d8f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@dcfda20]
+01:32:39.731 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@556d0826 testClass = NhsHandoverBackendApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@66ce957f testClass = NhsHandoverBackendApplicationTests, locations = '{}', classes = '{class com.example.nhs_handover_backend.NhsHandoverBackendApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@1838ccb8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6bc407fd, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5ef5c734, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4671115f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@54504ecd, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@58a9760d], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+01:32:39.829 [Test worker] DEBUG org.springframework.boot.ApplicationServletEnvironment - Activating profiles []
+01:32:39.830 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -113,21 +113,21 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.2)
 
-2022-01-21 01:25:25.017  INFO 30257 --- [    Test worker] c.e.n.NhsHandoverBackendApplicationTests : Starting NhsHandoverBackendApplicationTests using Java 16.0.2 on Sachas-Air with PID 30257 (started by sachaavey in /Users/sachaavey/Desktop/NHS app/NHS_Handover_App_Backend)
-2022-01-21 01:25:25.019  INFO 30257 --- [    Test worker] c.e.n.NhsHandoverBackendApplicationTests : No active profile set, falling back to default profiles: default
-2022-01-21 01:25:26.540  INFO 30257 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-01-21 01:25:26.677  INFO 30257 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 6 JPA repository interfaces.
-2022-01-21 01:25:27.829  INFO 30257 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-01-21 01:25:27.888  INFO 30257 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
-2022-01-21 01:25:28.063  INFO 30257 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-01-21 01:25:28.165  INFO 30257 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-01-21 01:25:31.042  INFO 30257 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-01-21 01:25:31.075  INFO 30257 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-01-21 01:32:40.241  INFO 30470 --- [    Test worker] c.e.n.NhsHandoverBackendApplicationTests : Starting NhsHandoverBackendApplicationTests using Java 16.0.2 on Sachas-Air with PID 30470 (started by sachaavey in /Users/sachaavey/Desktop/NHS app/NHS_Handover_App_Backend)
+2022-01-21 01:32:40.242  INFO 30470 --- [    Test worker] c.e.n.NhsHandoverBackendApplicationTests : No active profile set, falling back to default profiles: default
+2022-01-21 01:32:41.406  INFO 30470 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-01-21 01:32:41.531  INFO 30470 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 6 JPA repository interfaces.
+2022-01-21 01:32:42.831  INFO 30470 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-01-21 01:32:42.883  INFO 30470 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.3.Final
+2022-01-21 01:32:43.039  INFO 30470 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-01-21 01:32:43.139  INFO 30470 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-01-21 01:32:46.015  INFO 30470 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-01-21 01:32:46.064  INFO 30470 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
 Hibernate: 
     
     alter table consultant 
        drop constraint FKc1ig63jd5jy0kun4yqfgff6w5
-2022-01-21 01:25:32.663  WARN 30257 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
+2022-01-21 01:32:47.828  WARN 30470 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
     alter table consultant 
        drop constraint FKc1ig63jd5jy0kun4yqfgff6w5&quot; via JDBC Statement
 
@@ -273,7 +273,7 @@ Hibernate:
     
     alter table hospital_personnel 
        drop constraint FKqr99syxnuwnxe95cnmk7t0bjm
-2022-01-21 01:25:32.872  WARN 30257 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
+2022-01-21 01:32:48.068  WARN 30470 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
     alter table hospital_personnel 
        drop constraint FKqr99syxnuwnxe95cnmk7t0bjm&quot; via JDBC Statement
 
@@ -419,7 +419,7 @@ Hibernate:
     
     alter table junior_doctor 
        drop constraint FKbid3urfmf14dpcdl6qpng65o2
-2022-01-21 01:25:33.099  WARN 30257 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
+2022-01-21 01:32:48.282  WARN 30470 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
     alter table junior_doctor 
        drop constraint FKbid3urfmf14dpcdl6qpng65o2&quot; via JDBC Statement
 
@@ -565,7 +565,7 @@ Hibernate:
     
     alter table patient 
        drop constraint FKaxjru7sr936i3y7dy396vnon8
-2022-01-21 01:25:33.320  WARN 30257 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
+2022-01-21 01:32:48.522  WARN 30470 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
     alter table patient 
        drop constraint FKaxjru7sr936i3y7dy396vnon8&quot; via JDBC Statement
 
@@ -711,7 +711,7 @@ Hibernate:
     
     alter table task 
        drop constraint FK8acaggdnfid2i8609xhg70454
-2022-01-21 01:25:33.536  WARN 30257 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
+2022-01-21 01:32:48.750  WARN 30470 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
     alter table task 
        drop constraint FK8acaggdnfid2i8609xhg70454&quot; via JDBC Statement
 
@@ -857,7 +857,7 @@ Hibernate:
     
     alter table task 
        drop constraint FKrh637elq1ebloecodg443koy1
-2022-01-21 01:25:33.763  WARN 30257 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
+2022-01-21 01:32:48.954  WARN 30470 --- [    Test worker] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL &quot;
     alter table task 
        drop constraint FKrh637elq1ebloecodg443koy1&quot; via JDBC Statement
 
@@ -1002,38 +1002,38 @@ Caused by: org.postgresql.util.PSQLException: ERROR: relation &quot;task&quot; d
 Hibernate: 
     
     drop table if exists consultant cascade
-2022-01-21 01:25:33.974  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-01-21 01:25:33.976  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;consultant&quot; does not exist, skipping
+2022-01-21 01:32:49.170  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-01-21 01:32:49.171  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;consultant&quot; does not exist, skipping
 Hibernate: 
     
     drop table if exists hospital_personnel cascade
-2022-01-21 01:25:34.170  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-01-21 01:25:34.171  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;hospital_personnel&quot; does not exist, skipping
+2022-01-21 01:32:49.375  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-01-21 01:32:49.376  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;hospital_personnel&quot; does not exist, skipping
 Hibernate: 
     
     drop table if exists junior_doctor cascade
-2022-01-21 01:25:34.370  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-01-21 01:25:34.372  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;junior_doctor&quot; does not exist, skipping
+2022-01-21 01:32:49.571  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-01-21 01:32:49.574  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;junior_doctor&quot; does not exist, skipping
 Hibernate: 
     
     drop table if exists patient cascade
-2022-01-21 01:25:34.574  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-01-21 01:25:34.575  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;patient&quot; does not exist, skipping
+2022-01-21 01:32:49.765  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-01-21 01:32:49.766  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;patient&quot; does not exist, skipping
 Hibernate: 
     
     drop table if exists person cascade
-2022-01-21 01:25:34.774  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-01-21 01:25:34.774  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;person&quot; does not exist, skipping
+2022-01-21 01:32:49.962  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-01-21 01:32:49.963  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;person&quot; does not exist, skipping
 Hibernate: 
     
     drop table if exists task cascade
-2022-01-21 01:25:34.970  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-01-21 01:25:34.970  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;task&quot; does not exist, skipping
+2022-01-21 01:32:50.156  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-01-21 01:32:50.158  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : table &quot;task&quot; does not exist, skipping
 Hibernate: 
     
     drop sequence if exists hibernate_sequence
-2022-01-21 01:25:35.164  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2022-01-21 01:25:35.166  WARN 30257 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence &quot;hibernate_sequence&quot; does not exist, skipping
+2022-01-21 01:32:50.350  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2022-01-21 01:32:50.351  WARN 30470 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence &quot;hibernate_sequence&quot; does not exist, skipping
 Hibernate: create sequence hibernate_sequence start 1 increment 1
 Hibernate: 
     
@@ -1124,10 +1124,10 @@ Hibernate:
        add constraint FKrh637elq1ebloecodg443koy1 
        foreign key (patient_object_id) 
        references patient
-2022-01-21 01:25:37.873  INFO 30257 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-01-21 01:25:37.898  INFO 30257 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-01-21 01:25:39.598  WARN 30257 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-01-21 01:25:40.652  INFO 30257 --- [    Test worker] c.e.n.NhsHandoverBackendApplicationTests : Started NhsHandoverBackendApplicationTests in 16.12 seconds (JVM running for 18.586)
+2022-01-21 01:32:53.063  INFO 30470 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-01-21 01:32:53.084  INFO 30470 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-01-21 01:32:55.980  WARN 30470 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-01-21 01:32:57.523  INFO 30470 --- [    Test worker] c.e.n.NhsHandoverBackendApplicationTests : Started NhsHandoverBackendApplicationTests in 17.683 seconds (JVM running for 19.621)
 </pre>
 </span>
 </div>
@@ -1139,7 +1139,7 @@ Hibernate:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.2</a> at 21 Jan 2022, 01:25:46</p>
+<a href="http://www.gradle.org">Gradle 7.3.2</a> at 21 Jan 2022, 01:33:02</p>
 </div>
 </div>
 </body>

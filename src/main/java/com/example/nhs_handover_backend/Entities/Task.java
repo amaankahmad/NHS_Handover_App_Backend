@@ -8,7 +8,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne
+    @ManyToOne
     private Patient patientObject;
     @ManyToOne
     private JuniorDoctor doctorOfTask;
@@ -45,6 +45,8 @@ public class Task {
         taskDescript = "TBD";
         creationTime="TBD";
         status = false;
+        covidStatus = "TBD";
+        duraton = "TBD";
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){

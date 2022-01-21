@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.nhs_handover_backend.TestPerson" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-21T05:25:41" hostname="Sachas-Air" time="0.018">
+<testsuite name="com.example.nhs_handover_backend.TestPerson" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-21T05:32:57" hostname="Sachas-Air" time="0.01">
   <properties/>
-  <testcase name="testGetName()" classname="com.example.nhs_handover_backend.TestPerson" time="0.011"/>
+  <testcase name="testGetName()" classname="com.example.nhs_handover_backend.TestPerson" time="0.005"/>
   <testcase name="testGetDOB()" classname="com.example.nhs_handover_backend.TestPerson" time="0.001"/>
   <testcase name="testGetSex()" classname="com.example.nhs_handover_backend.TestPerson" time="0.002"/>
   <system-out><![CDATA[]]></system-out>

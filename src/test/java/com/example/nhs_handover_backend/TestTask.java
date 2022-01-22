@@ -38,7 +38,7 @@ public class TestTask {
     String covidStatus3 = "Positive";
     String duraton3 = "3 hours";
     String urgency3 = "urgent";
-    Task t= new Task(pat,"Consultant","family history of diabetes","previous task done: blood test and ECG","clinical review","13:24","3 hours","Positive","urgent");
+    Task t= new Task(pat,"Consultant","family history of diabetes","previous task done: blood test and ECG","clinical review","13:24","3 hours","Positive","urgent", "Dr. Ahmad");
 
     // Set Doctor of Task Test
     @Test

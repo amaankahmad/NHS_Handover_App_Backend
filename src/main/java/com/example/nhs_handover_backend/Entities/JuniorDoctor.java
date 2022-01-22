@@ -8,10 +8,11 @@ import java.util.ArrayList;
 public class JuniorDoctor extends HospitalPersonnel {
 
     public JuniorDoctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn, String passwordIn){
-        super(nameIn, DOBIn, sexIn, emailIn, numPagerIn, passwordIn);
+        super(nameIn, DOBIn, sexIn, emailIn, numPagerIn, passwordIn, "Junior Doctor");
     }
 
     public JuniorDoctor() {
-        super("TBD","TBD","TBD","TBD","TBD", "TBD");
+        super("TBD","TBD","TBD","TBD","TBD",
+                "TBD", "Junior Doctor");
     }
 }

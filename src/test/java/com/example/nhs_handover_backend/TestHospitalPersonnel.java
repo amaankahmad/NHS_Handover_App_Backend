@@ -18,7 +18,7 @@ public class TestHospitalPersonnel {
     String numPager1 = "7502985";
     String password1 = "abcd1234";
 
-    HospitalPersonnel hospPersonnel= new HospitalPersonnel("Sacha Avey","07/03/2001","Female","sa3019@ic.ac.uk","7502985","abcd1234");
+    HospitalPersonnel hospPersonnel= new HospitalPersonnel("Sacha Avey","07/03/2001","Female","sa3019@ic.ac.uk","7502985","abcd1234", "Junior Doctor");
 
     Patient pat;
     String name2 = "Amaan Ahmad";

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class TestTask {
 
-    SingletonDatabase db = SingletonDatabase.getInstance();
     ArrayList<Task> tasks;
 
     JuniorDoctor doc;
@@ -27,7 +26,7 @@ public class TestTask {
     String numMRN2 = "123456";
     String location2 = "Imperial College London";
 
-    Task t;
+
     Patient pat3 = pat;
     JuniorDoctor doctorOfTask1;
     String senior3 = "Consultant";
@@ -35,25 +34,11 @@ public class TestTask {
     String history3 = "previous task done: blood test and ECG";
     String time3 = "13:24";
     String taskDescript3 = "clinical review";
-
-
-    @BeforeEach
-    public void setUp(){
-        db.reset();
-
-        db.createJrDoctor(name1, DOB1, sex1, email1, numPager1);
-        doc=db.getJrDoctorList().get(0);
-        doctorOfTask1 = doc;
-
-        db.createPatient(name2, DOB2, sex2, location2, numMRN2);
-        pat = db.getPatientList().get(0);
-
-        db.createTask(pat3, senior3, notes3, history3, taskDescript3, time3);
-        t = db.getCurrTaskList().get(0);
-
-        tasks = new ArrayList<Task>();
-        tasks.add(t);
-         }
+    Boolean status3 = false;
+    String covidStatus3 = "Positive";
+    String duraton3 = "3 hours";
+    String urgency3 = "urgent";
+    Task t= new Task(pat,"Consultant","family history of diabetes","previous task done: blood test and ECG","clinical review","13:24","3 hours","Positive","urgent", "Dr. Ahmad");
 
     // Set Doctor of Task Test
     @Test

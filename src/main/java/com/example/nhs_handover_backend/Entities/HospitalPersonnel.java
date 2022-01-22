@@ -1,15 +1,31 @@
 package com.example.nhs_handover_backend.Entities;
 
-public class HospitalPersonnel extends Person {
-    SingletonDatabase db = SingletonDatabase.getInstance();
+import javax.persistence.*;
 
+@Entity (name = "HospitalPersonnel")
+//@Inheritance(strategy = InheritanceType.JOINED)
+public class HospitalPersonnel extends Person{
     private String email;
     private String numPager;
+    private String password;
+    private String role;
 
-    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn) {
+
+    public HospitalPersonnel(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn,
+                             String passwordIn, String roleIn) {
         super(nameIn, DOBIn, sexIn);
         email = emailIn;
         numPager = numPagerIn;
+        password= passwordIn;
+        role = roleIn;
+    }
+
+    public HospitalPersonnel() {
+        super("TBD","TBD","TBD");
+        email = "TBD";
+        numPager = "TBD";
+        password= "TBD";
+        role = "TBD";
     }
 
     public String getNumPager(){
@@ -20,11 +36,9 @@ public class HospitalPersonnel extends Person {
         return email;
     }
 
-    public void addPatient(String nameIn, String DOBIn, String sexIn, String patientLocationIn, String numMRNIn){
-        db.createPatient(nameIn, DOBIn, sexIn, patientLocationIn, numMRNIn);
+    public String getRole(){
+        return role;
     }
 
-    public void createTask(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn){
-        db.createTask(patIn, seniorIn, notesIn, historyIn, taskDescriptIn, creationTimeIn);
-    }
+    public String getPassword(){return password;}
 }

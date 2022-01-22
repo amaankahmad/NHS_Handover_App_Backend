@@ -6,6 +6,8 @@ import com.example.nhs_handover_backend.Repositories.ConsultantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class ConsultantService {
     @Autowired
@@ -16,7 +18,12 @@ public class ConsultantService {
         this.consultantRepository = consultantRepository;
     }
 
-    public void createConsultant(Consultant doc){
+    public Consultant createConsultant(Consultant doc){
         consultantRepository.save(doc);
+        return doc;
+    }
+
+    public ArrayList<Consultant> getAllConsultants() {
+        return (ArrayList<Consultant>) consultantRepository.findAll();
     }
 }

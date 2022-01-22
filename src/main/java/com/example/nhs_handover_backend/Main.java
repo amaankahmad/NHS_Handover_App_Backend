@@ -13,8 +13,9 @@ public class Main {
         String hospitalID1 = "123456";
         String email1= "peter.james@gmail.com";
         String numPager1= "123456";
+        String password = "password";
 
         // Double check that when passing this in a method its passing in the pointer rather creating a new object
-        HospitalPersonnel doc = new HospitalPersonnel(name1, DOB1, sex1, email1, numPager1);
+        HospitalPersonnel doc = new HospitalPersonnel(name1, DOB1, sex1, email1, numPager1,password);
     }
 }

@@ -16,8 +16,9 @@ public class PatientService {
         this.patientRepository = patientRepository;
     }
 
-    public void addPatient(Patient pat) {
+    public Patient addPatient(Patient pat) {
         patientRepository.save(pat);
+        return pat;
     }
 
     public ArrayList<Patient> getAllPatients(){

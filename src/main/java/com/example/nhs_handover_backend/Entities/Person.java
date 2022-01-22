@@ -35,4 +35,6 @@ public class Person {
     public String getDOB(){
         return DOB;
     }
+
+    public Long getId(){ return id;}
 }

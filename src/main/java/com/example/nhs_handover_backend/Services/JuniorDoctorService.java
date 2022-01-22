@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @Service
 public class JuniorDoctorService {
     @Autowired
-    private final JuniorDoctorRepository juniorDoctorRepository;
+    private JuniorDoctorRepository juniorDoctorRepository;
     @Autowired
     public JuniorDoctorService(JuniorDoctorRepository juniorDoctorRepository) {
         this.juniorDoctorRepository = juniorDoctorRepository;

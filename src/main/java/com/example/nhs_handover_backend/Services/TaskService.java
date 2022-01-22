@@ -1,6 +1,6 @@
 package com.example.nhs_handover_backend.Services;
 
-import com.example.nhs_handover_backend.Entities.Doctor;
+import com.example.nhs_handover_backend.Entities.HospitalPersonnel;
 import com.example.nhs_handover_backend.Entities.Patient;
 import com.example.nhs_handover_backend.Entities.Task;
 import com.example.nhs_handover_backend.Repositories.TaskRepository;
@@ -20,28 +20,10 @@ public class TaskService{
     }
 
     public ArrayList<Task> getUncompletedTasks() {
-//        ArrayList<Task> allTasks = new ArrayList<>();
-//        ArrayList<Task> currentTasks = new ArrayList<>();
-//        taskRepository.findAll().forEach(allTasks::add);
-//        for (int i = 0; i < allTasks.size(); i++){
-//            if (allTasks.get(i).getStatus() == Boolean.FALSE){
-//                currentTasks.add(allTasks.get(i));
-//            }
-//        }
-//        return currentTasks;
         return taskRepository.findByStatus(Boolean.FALSE);
     }
 
     public ArrayList<Task> getCompletedTasks() {
-//        ArrayList<Task> allTasks = new ArrayList<>();
-//        ArrayList<Task> completedTasks = new ArrayList<>();
-//        taskRepository.findAll().forEach(allTasks::add);
-//        for (int i = 0; i < allTasks.size(); i++){
-//            if (allTasks.get(i).getStatus() == Boolean.TRUE){
-//                completedTasks.add(allTasks.get(i));
-//            }
-//        }
-//        return completedTasks;
         return taskRepository.findByStatus(Boolean.TRUE);
     }
 
@@ -49,13 +31,8 @@ public class TaskService{
         return (ArrayList<Task>) taskRepository.findAll();
     }
 
-    public ArrayList<Task> getDoctorTasks(){
-        //Returns all doctors current tasks
-//        return db.getDoctorTasks();
-        //return taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE);
-        //ArrayList<Task> arrayList = new ArrayList<>();
+    public ArrayList<Task> getOrderedDoctorTasks(){
         return taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE);
-        //return arrayList;
     }
 
     public ArrayList<Task> getDoctorTasks(Long id) {
@@ -66,7 +43,7 @@ public class TaskService{
         taskRepository.save(task);
     }
 
-    public void takeUpTask(Doctor doc, Long id) {
+    public void takeUpTask(HospitalPersonnel doc, Long id) {
         taskRepository.takeUpTask(doc, id);
     }
 
@@ -93,4 +70,23 @@ public class TaskService{
     }
 
 
+    public void archiveAllTasks() {
+        ArrayList<Task> taskList = (ArrayList<Task>) taskRepository.findAll();
+        for (int i=0; i< taskList.size(); i++){
+            Long id = taskList.get(i).getId();
+            taskRepository.archiveTask(id);
+        }
+    }
+
+    public void removeTask(Task taskRemoved){
+        taskRepository.delete(taskRemoved);
+    }
+
+    public void removeAllTasks() {
+        ArrayList<Task> taskList = (ArrayList<Task>) taskRepository.findAll();
+        for (int i=0; i< taskList.size(); i++){
+            Long id = taskList.get(i).getId();
+            taskRepository.deleteById(id);
+        }
+    }
 }

@@ -22,7 +22,7 @@ public class TestPatient {
     // getID() test
     @Test
     public void testGetNumMRN(){
-        Assertions.assertEquals(ID1, pat.getNumMRN());
+        Assertions.assertEquals("123456", pat.getNumMRN());
     }
     // getPatientLocation() Test
     @Test

@@ -2,9 +2,11 @@ package com.example.nhs_handover_backend.Controllers;
 import com.example.nhs_handover_backend.Entities.*;
 import com.example.nhs_handover_backend.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 @CrossOrigin(origins = "http://localhost:3000/")
 @RestController
@@ -43,7 +45,6 @@ public class HospitalPersonnelController {
     @PostMapping("/createHospitalPerson")
     public void createHospitalPerson(@RequestBody HospitalPersonnel doc) {
         // Directly mapping the post json request body to the HospitalPersonnel object
-        System.out.println(doc.getName());
         hospitalPersonnelService.createHospitalPersonnel(doc);
     }
 
@@ -55,5 +56,60 @@ public class HospitalPersonnelController {
     @PostMapping("/createJuniorDoctor")
     public void createJuniorDoctor(@RequestBody JuniorDoctor doc){
         juniorDoctorService.createJuniorDoctor(doc);
+    }
+
+   //Make patient with individual parameters instead of patient object
+    @RequestMapping(path="/addPatient/{name}/{dob}/{sex}/{loc}/{mrn}", method = RequestMethod.GET)
+    public void addPatient(@PathVariable("name") String nameIn,@PathVariable("dob") String DOBIn,@PathVariable("sex") String sexIn,@PathVariable("loc") String locationIn,@PathVariable("mrn") String numMRNIn){
+          Patient p = new Patient(nameIn,DOBIn,sexIn,locationIn,numMRNIn);
+        patientService.addPatient(p);
+    }
+
+    @RequestMapping(path="/addPatient/{pat}", method = RequestMethod.GET)
+    public void addPatient(@PathVariable("pat") Patient patIn){
+        patientService.addPatient(patIn);
+    }
+
+    @PostMapping("/createTask/{task}")
+    public void createTask(@PathVariable("task") Task task){
+        taskService.createTask(task);
+    }
+
+    @RequestMapping(path="/createFollowUpTask/{oldTask}/{senior}/{notes}/{taskDescription}/{creationTime}", method = RequestMethod.GET)
+    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn, @PathVariable("duration") String durationIn, @PathVariable("covidStatus") String covidStatusIn, @PathVariable("urgency") String urgencyIn){
+        taskService.archiveTask(oldTask.getId());
+        String[] pastInfo = taskService.getTaskInfo(oldTask.getId());
+        Patient p = taskService.getPatient(oldTask.getId());
+        notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
+        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn, durationIn, covidStatusIn,urgencyIn);
+        taskService.createTask(followUp);
+    }
+
+    @RequestMapping(path="/getSeniority/{emailIn}")
+    public String getSeniority(@PathVariable("emailIn") String emailIn){
+        Long id = hospitalPersonnelService.getIdFromEmail(emailIn);
+        ArrayList<JuniorDoctor> juniorDocList = juniorDoctorService.getAllJuniorDoctors();
+        String seniority = new String("consultant");
+        for (int i=0; i< juniorDocList.size();i++){
+           if (Objects.equals(juniorDocList.get(i).getId(), id)){
+               seniority = "junior doctor";
+           }
+        }
+        return seniority;
+    }
+
+    @GetMapping("/archiveTask/{id}")
+    public void archiveTask(@PathVariable("id") Long id){
+        taskService.archiveTask(id);
+    }
+
+    @GetMapping("/RemoveTask")
+    public void removeTask(@PathVariable("task") Task taskRemoved){
+        taskService.removeTask(taskRemoved);
+    }
+
+    @GetMapping("removeAllTasks")
+    public void removeAllTasks(){
+        taskService.removeAllTasks();
     }
 }

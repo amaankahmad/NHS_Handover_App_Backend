@@ -2,6 +2,7 @@ package com.example.nhs_handover_backend.Controllers;
 import com.example.nhs_handover_backend.Entities.*;
 import com.example.nhs_handover_backend.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -50,8 +51,9 @@ public class HospitalPersonnelController {
     }
 
     @PostMapping("/createConsultant")
-    public void createConsultant(@PathVariable("doc") Consultant doc){
+    public Consultant createConsultant(@PathVariable("doc") Consultant doc){
         consultantService.createConsultant(doc);
+        return doc;
     }
 
     @PostMapping("/createJuniorDoctor")
@@ -77,12 +79,12 @@ public class HospitalPersonnelController {
     }
 
     @RequestMapping(path="/createFollowUpTask/{oldTask}/{senior}/{notes}/{taskDescription}/{creationTime}", method = RequestMethod.GET)
-    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn, @PathVariable("duration") String durationIn, @PathVariable("covidStatus") String covidStatusIn){
+    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn, @PathVariable("duration") String durationIn, @PathVariable("covidStatus") String covidStatusIn, @PathVariable("urgency") String urgencyIn){
         taskService.archiveTask(oldTask.getId());
         String[] pastInfo = taskService.getTaskInfo(oldTask.getId());
         Patient p = taskService.getPatient(oldTask.getId());
         notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
-        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn, durationIn, covidStatusIn);
+        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn, durationIn, covidStatusIn,urgencyIn);
         taskService.createTask(followUp);
     }
 
@@ -102,5 +104,15 @@ public class HospitalPersonnelController {
     @GetMapping("/archiveTask/{id}")
     public void archiveTask(@PathVariable("id") Long id){
         taskService.archiveTask(id);
+    }
+
+    @GetMapping("/RemoveTask")
+    public void removeTask(@PathVariable("task") Task taskRemoved){
+        taskService.removeTask(taskRemoved);
+    }
+
+    @GetMapping("removeAllTasks")
+    public void removeAllTasks(){
+        taskService.removeAllTasks();
     }
 }

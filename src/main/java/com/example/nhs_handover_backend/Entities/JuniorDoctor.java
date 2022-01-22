@@ -7,11 +7,11 @@ import java.util.ArrayList;
 @Entity (name = "JuniorDoctor")
 public class JuniorDoctor extends HospitalPersonnel {
 
-    public JuniorDoctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn){
-        super(nameIn, DOBIn, sexIn, emailIn, numPagerIn);
+    public JuniorDoctor(String nameIn, String DOBIn, String sexIn, String emailIn, String numPagerIn, String passwordIn){
+        super(nameIn, DOBIn, sexIn, emailIn, numPagerIn, passwordIn);
     }
 
     public JuniorDoctor() {
-        super("TBD","TBD","TBD","TBD","TBD");
+        super("TBD","TBD","TBD","TBD","TBD", "TBD");
     }
 }

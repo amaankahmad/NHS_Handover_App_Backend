@@ -21,28 +21,10 @@ public class TaskService{
     }
 
     public ArrayList<Task> getTasks() {
-//        ArrayList<Task> allTasks = new ArrayList<>();
-//        ArrayList<Task> currentTasks = new ArrayList<>();
-//        taskRepository.findAll().forEach(allTasks::add);
-//        for (int i = 0; i < allTasks.size(); i++){
-//            if (allTasks.get(i).getStatus() == Boolean.FALSE){
-//                currentTasks.add(allTasks.get(i));
-//            }
-//        }
-//        return currentTasks;
         return taskRepository.findByStatus(Boolean.FALSE);
     }
 
     public ArrayList<Task> getCompletedTasks() {
-//        ArrayList<Task> allTasks = new ArrayList<>();
-//        ArrayList<Task> completedTasks = new ArrayList<>();
-//        taskRepository.findAll().forEach(allTasks::add);
-//        for (int i = 0; i < allTasks.size(); i++){
-//            if (allTasks.get(i).getStatus() == Boolean.TRUE){
-//                completedTasks.add(allTasks.get(i));
-//            }
-//        }
-//        return completedTasks;
         return taskRepository.findByStatus(Boolean.TRUE);
     }
 
@@ -51,12 +33,7 @@ public class TaskService{
     }
 
     public ArrayList<Task> getDoctorTasks(){
-        //Returns all doctors current tasks
-//        return db.getDoctorTasks();
-        //return taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE);
-        //ArrayList<Task> arrayList = new ArrayList<>();
         return taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE);
-        //return arrayList;
     }
 
     public ArrayList<Task> getDoctorTasks(Long id) {
@@ -90,4 +67,23 @@ public class TaskService{
     }
 
 
+    public void archiveAllTasks() {
+        ArrayList<Task> taskList = (ArrayList<Task>) taskRepository.findAll();
+        for (int i=0; i< taskList.size(); i++){
+            Long id = taskList.get(i).getId();
+            taskRepository.archiveTask(id);
+        }
+    }
+
+    public void removeTask(Task taskRemoved){
+        taskRepository.delete(taskRemoved);
+    }
+
+    public void removeAllTasks() {
+        ArrayList<Task> taskList = (ArrayList<Task>) taskRepository.findAll();
+        for (int i=0; i< taskList.size(); i++){
+            Long id = taskList.get(i).getId();
+            taskRepository.deleteById(id);
+        }
+    }
 }

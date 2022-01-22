@@ -18,8 +18,9 @@ public class ConsultantService {
         this.consultantRepository = consultantRepository;
     }
 
-    public void createConsultant(Consultant doc){
+    public Consultant createConsultant(Consultant doc){
         consultantRepository.save(doc);
+        return doc;
     }
 
     public ArrayList<Consultant> getAllConsultants() {

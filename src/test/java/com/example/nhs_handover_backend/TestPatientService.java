@@ -19,11 +19,15 @@
 //
 //@RunWith(SpringRunner.class)
 //public class TestPatientService {
-//    @Autowired
-//    private PatientServiceImplementer patientServiceImplementer;
+//
+//
 //
 //    @MockBean
-//    private PatientRepositoryImplementer patientRepositoryImplementer = new PatientRepositoryImplementer();
+//    @Autowired
+//    private PatientRepositoryImplementer patientRepositoryImplementer;
+//
+//    @Autowired
+//    private PatientServiceImplementer patientServiceImplementer = new PatientServiceImplementer(patientRepositoryImplementer);
 //
 //    @Test
 //    public void getAllPatientsTest(){

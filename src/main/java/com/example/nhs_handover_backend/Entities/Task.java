@@ -19,11 +19,12 @@ public class Task {
     private String taskDescript;
     private String covidStatus;
     private String duraton;
+    private String urgency;
     // if status is FALSE, task is incomplete
     private Boolean status;
 
 
-    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn, String durationIn, String covidStatusIn){
+    public Task(Patient patIn, String seniorIn, String notesIn, String historyIn, String taskDescriptIn, String creationTimeIn, String durationIn, String covidStatusIn, String urgencyIn){
         patientObject=patIn;
         seniorityRequired=seniorIn;
         additionalNotes=notesIn;
@@ -33,7 +34,7 @@ public class Task {
         status = false;
         covidStatus = covidStatusIn;
         duraton = durationIn;
-
+        urgency= urgencyIn;
     }
 
     public Task() {
@@ -47,6 +48,7 @@ public class Task {
         status = false;
         covidStatus = "TBD";
         duraton = "TBD";
+        urgency = "TBD";
     }
 
     public void setDoctorOfTask(JuniorDoctor docIn){

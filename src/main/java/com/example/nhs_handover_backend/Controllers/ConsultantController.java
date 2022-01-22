@@ -22,9 +22,9 @@ public class ConsultantController {
         this.juniorDoctorService = juniorDoctorService;
     }
 
-    @GetMapping("/getTasks")
-    public ArrayList<Task> getTasks(){
-        return taskService.getTasks();
+    @GetMapping("/getUncompletedTasks")
+    public ArrayList<Task> getUncompletedTasks(){
+        return taskService.getUncompletedTasks();
     }
 
     @GetMapping("/getCompletedTasks")

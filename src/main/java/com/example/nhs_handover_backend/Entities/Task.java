@@ -10,6 +10,7 @@ public class Task {
     private Long id;
     @ManyToOne
     private Patient patientObject;
+    @ManyToOne
     private JuniorDoctor doctorOfTask;
     private String seniorityRequired;
     private String additionalNotes;

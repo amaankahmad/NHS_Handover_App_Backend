@@ -19,7 +19,7 @@ public class TaskService{
         this.taskRepository = taskRepository;
     }
 
-    public ArrayList<Task> getTasks() {
+    public ArrayList<Task> getUncompletedTasks() {
 //        ArrayList<Task> allTasks = new ArrayList<>();
 //        ArrayList<Task> currentTasks = new ArrayList<>();
 //        taskRepository.findAll().forEach(allTasks::add);
@@ -77,6 +77,10 @@ public class TaskService{
     public Patient getPatient(Long oldTaskId) {
         Task task = taskRepository.findById(oldTaskId).get();;
         return task.getPatient();
+    }
+
+    public Task getTask(Long Id) {
+        return taskRepository.findById(Id).get();
     }
 
     public String[] getTaskInfo(Long oldTaskId) {

@@ -5,7 +5,12 @@ import com.example.nhs_handover_backend.Entities.Patient;
 import com.example.nhs_handover_backend.Entities.Task;
 import com.example.nhs_handover_backend.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000/")
 @RestController
@@ -29,16 +34,31 @@ public class TaskController {
         patientService.addPatient(task.getPatient());
         taskService.createTask(task);
     }
+    @PostMapping("/createFollowUpTask")
+    public void createTask(@RequestBody Task oldTask, @RequestBody Task newTask){
+        taskService.archiveTask(oldTask.getId());
+        System.out.println(oldTask.getPatient().getNumMRN());
+        System.out.println(oldTask.getTaskInfo());
+        taskService.createTask(newTask);
+    }
 
-//    @PostMapping(path="/createFollowUpTask")
-//    public void createFollowUpTask(@PathVariable("oldTask") Task oldTask,@PathVariable("senior") String seniorIn,@PathVariable("notes") String notesIn,@PathVariable("taskDescription") String taskDescriptionIn,@PathVariable("creationTime") String creationTimeIn){
-//        taskService.archiveTask(oldTask.getId());
-//        String[] pastInfo = taskService.getTaskInfo(oldTask.getId());
-//        Patient p = taskService.getPatient(oldTask.getId());
-//        notesIn = notesIn + "\nAdditional Notes from Previous Task: \n" + pastInfo[0];
-//        Task followUp = new Task(p,seniorIn,notesIn, oldTask.getHistory(), taskDescriptionIn,creationTimeIn);
-//        taskService.createTask(followUp);
-//    }
+    @GetMapping("/getUncompletedTasks")
+    public ArrayList<Task> getAllUncompletedTasks() {
+        return taskService.getUncompletedTasks();
+    }
+
+    @GetMapping("/getTask/{Id}")
+    public Task getTask(@PathVariable Long Id) {
+        return taskService.getTask(Id);
+    }
+
+    @DeleteMapping("archiveTask/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteTask(@PathVariable Long id) {
+        taskService.archiveTask(id);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return ResponseEntity.ok(response);
+    }
 //
 //    @GetMapping("/archiveTask/{id}")
 //    public void archiveTask(@PathVariable("id") Long id){

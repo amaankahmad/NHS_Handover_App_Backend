@@ -46,7 +46,7 @@ public class SystemController {
     @Autowired
     private JavaMailSender sender;
 
-    @RequestMapping("/simpleemail")
+    @RequestMapping("/sendMail")
     @ResponseBody
     String home() {
         try {
@@ -79,7 +79,8 @@ public class SystemController {
     //sends an email out once a month to the head consultant (dr.Salem) with all tasks, archived and current.
     //After email is sent all tasks are cleared from the history of the application
     @Scheduled(cron = "0 0 9 1 1/1 *")
-    public void sendMail() throws Exception {
+    @GetMapping("/removeAllTasks")
+    public void removeAllTasks() throws Exception {
         sendEmail();
         taskService.removeAllTasks();
         System.out.println("Scheduled task running");

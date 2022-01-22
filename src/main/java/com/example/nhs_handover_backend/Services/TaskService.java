@@ -32,7 +32,7 @@ public class TaskService{
         return (ArrayList<Task>) taskRepository.findAll();
     }
 
-    public ArrayList<Task> getDoctorTasks(){
+    public ArrayList<Task> getOrderedDoctorTasks(){
         return taskRepository.findByStatusOrderByDoctorOfTask(Boolean.FALSE);
     }
 

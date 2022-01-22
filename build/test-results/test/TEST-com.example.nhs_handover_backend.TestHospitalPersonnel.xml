@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.nhs_handover_backend.TestHospitalPersonnel" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-22T03:39:59" hostname="Sachas-Air" time="0.02">
+  <properties/>
+  <testcase name="testGetPassword()" classname="com.example.nhs_handover_backend.TestHospitalPersonnel" time="0.008"/>
+  <testcase name="testGetEmail()" classname="com.example.nhs_handover_backend.TestHospitalPersonnel" time="0.001"/>
+  <testcase name="testGetNumPager()" classname="com.example.nhs_handover_backend.TestHospitalPersonnel" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

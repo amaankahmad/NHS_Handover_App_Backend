@@ -62,6 +62,10 @@ public class Task {
     public String getTime(){
         return creationTime;}
 
+    public void setTime(String creationTimeIn){
+        creationTime=creationTimeIn;
+    }
+
     public String[] getTaskInfo() {
         String[] res = {additionalNotes, history};
         return res;

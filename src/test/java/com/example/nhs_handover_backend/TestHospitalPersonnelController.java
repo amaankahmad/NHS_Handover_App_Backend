@@ -29,17 +29,12 @@ public class TestHospitalPersonnelController {
 
     private MockMvc mockMvc;
 
-    @Mock
-    private PatientService patientService;
-
     @InjectMocks
     private HospitalPersonnelController hospitalPersonnelController;
 
     @Before
     public void setUp() throws Exception {
         mockMvc = MockMvcBuilders.standaloneSetup(hospitalPersonnelController).build();
-        HospitalPersonnel hospitalPersonnel = new HospitalPersonnel("Nathan", "DOB", "Male", "nmj@ic.ac.uk", "0776589","abcd1234");
-        Patient patient = new Patient("Nathan", "DOB", "Male", "L01", "0776589");
     }
 
     @Test
